@@ -1,7 +1,13 @@
 /** @jsx h */
-import { h } from 'preact';
-import Hero from '../components/Hero.tsx';
+import { Fragment, h } from 'preact';
+import { Footer, Hero, Skills } from 'sections';
 
 export default function Home() {
-  return <Hero />;
+  return (
+    <Fragment>
+      <Hero />
+      <Skills />
+      <Footer />
+    </Fragment>
+  );
 }

@@ -1,6 +1,16 @@
 {
   "tasks": {
-    "start": "deno run -A --watch=static/,routes/ dev.ts"
+    "start": "deno run -A --watch=static/,routes/ dev.ts",
+    "prettier": "deno run --allow-read --allow-write https://denolib.com/denolib/prettier/main.ts"
   },
-  "importMap": "./import_map.json"
+  "importMap": "./import_map.json",
+  "fmt": {
+    "options": {
+      "useTabs": false,
+      "lineWidth": 80,
+      "indentWidth": 2,
+      "singleQuote": true,
+      "proseWrap": "preserve"
+    }
+  }
 }

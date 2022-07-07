@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "bracketSameLine": true,
+  "tailwindConfig": "tailwind.config.cjs",
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
