@@ -14,9 +14,9 @@ export const Hero = (): h.JSX.Element => {
       <h1
         class={tw`z-10 mx-auto max-w-screen-sm bg-gradient-to-tl from-blue-700 to-blue-400 bg-clip-text text-6xl tracking-wide dark:from-blue-500 dark:to-blue-200 md:text-center`}>
         Eric Kwoka is a
-        <span class={tw`font-semibold text-transparent`}>Full-Stack</span>
+        <span class={tw`font-semibold text-transparent`}> Full-Stack </span>
         Engineer and User Experience
-        <span class={tw`font-semibold text-transparent`}>Professional</span>.
+        <span class={tw`font-semibold text-transparent`}> Professional </span>.
       </h1>
     </section>
   );
