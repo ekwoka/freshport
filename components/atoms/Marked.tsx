@@ -19,6 +19,9 @@ type MarkdownStyles = {
 };
 
 const formatMarkdownOptions = (): MarkdownToJSX.Options => ({
+  wrapper: ({ children }) => (
+    <div class={tw`flex flex-col gap-2`}>{children}</div>
+  ),
   overrides: stylesToOverrides(markdownStyle),
 });
 
