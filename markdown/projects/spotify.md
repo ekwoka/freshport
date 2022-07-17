@@ -1,7 +1,7 @@
 ---
 live: https://kwoka-spotify.netlify.app/
 repo: https://github.com/ekwoka/spotify-webapp/
-images: /images/spotify-home.png
+images: /images/spotifywebapp.png
 core: preact, typescript, tailwindcss
 tools: esbuild, netlify, spotify
 title: Custom Spotify Webapp
