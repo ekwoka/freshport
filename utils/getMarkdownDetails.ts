@@ -38,12 +38,12 @@ export const getMarkdownDetails = (files: string[]): Promise<ProjectData[]> => {
       path: file,
       details: getDetails(data),
       preview: getPreview(data),
-      body: data.replace(/---(.*\n)*---/, '').replace(/\[.*\]\(.*\)/g, ''),
+      body: data.replace(/---(.*\n)*---/, ''),
     };
   });
 };
 
-type ProjectData = {
+export type ProjectData = {
   id: string;
   path: string;
   details: ProjectDetails;
