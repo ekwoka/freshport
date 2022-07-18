@@ -2,8 +2,6 @@
 import { h } from 'preact';
 import { tw } from '@twind';
 
-import { arrayWrap } from 'utils';
-
 export const ExtLink = ({ children, ...props }: ButtonProps): h.JSX.Element => (
   <a
     type="button"

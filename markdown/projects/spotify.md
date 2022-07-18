@@ -1,9 +1,9 @@
 ---
-live: https://kwoka-spotify.netlify.app/
-repo: https://github.com/ekwoka/spotify-webapp/
+live: kwoka-spotify.netlify.app/
+repo: github.com/ekwoka/spotify-webapp/
 images: /images/spotifywebapp.png
-core: preact, typescript, tailwindcss
-tools: esbuild, netlify, spotify
+core: preact, fauna, spotify
+tools: esbuild, netlify, typescript, tailwind
 title: Custom Spotify Webapp
 
 ---

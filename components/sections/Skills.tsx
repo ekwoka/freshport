@@ -3,6 +3,7 @@ import { h } from 'preact';
 import { tw } from '@twind';
 import { skills } from 'data';
 import { Marked } from 'atoms';
+import { SkillsGrid } from 'molecules';
 
 export const Skills = ({ content }: { content: string }): h.JSX.Element => {
   return (
@@ -12,9 +13,7 @@ export const Skills = ({ content }: { content: string }): h.JSX.Element => {
         <Marked content={content} />
         <div
           class={tw`flex w-full flex-row flex-wrap items-center justify-center gap-4`}>
-          {skills.map(({ Icon }) => (
-            <Icon />
-          ))}
+          <SkillsGrid skills={skills} />
         </div>
       </div>
     </section>

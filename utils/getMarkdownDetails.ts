@@ -5,13 +5,12 @@ const getDetails = (data: string): ProjectDetails => {
   if (!metadata) return nullDetails();
   const details = (metadata[0].match(/(.*):(.*)/g) || []).reduce(
     (obj: ProjectDetails, detail: string) => {
-      const key = detail.substring(
-        0,
-        detail.indexOf(':')
-      ) as keyof ProjectDetails;
-      const value = detail.substring(detail.indexOf(':') + 2);
+      const [key, value] = detail.split(/\s*:\s*/) as [
+        keyof ProjectDetails,
+        string
+      ];
       /* @ts-ignore-next-line */
-      obj[key] = arrayKeys.includes(key) ? value.split(',') : value;
+      obj[key] = arrayKeys.includes(key) ? value.split(/\s*,\s*/) : value;
       return obj;
     },
     nullDetails()

@@ -2,6 +2,6 @@
   "type": "module",
   "dependencies": {
     "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.11"
+    "prettier-plugin-tailwindcss": "^0.1.12"
   }
 }

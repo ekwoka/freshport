@@ -29,7 +29,7 @@ type MarkdownStyles = {
 
 const formatMarkdownOptions = (): MarkdownToJSX.Options => ({
   wrapper: ({ children }) => (
-    <div class={tw`flex max-w-prose flex-col gap-2`}>{children}</div>
+    <div class={tw`mx-auto flex max-w-prose flex-col gap-2`}>{children}</div>
   ),
   overrides: stylesToOverrides(markdownStyle, markdownProps),
 });
