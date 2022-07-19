@@ -1,38 +1,40 @@
 /** @jsx h */
 import { Fragment, h } from 'preact';
 import { HandlerContext, PageProps } from '$fresh/server.ts';
-import { Footer, Hero, Skills, Projects } from 'sections';
-import { getMarkdownDetails, ProjectData } from 'utils';
+import { Footer, Hero, Skills, ProjectSection } from 'sections';
+import {
+  getAllContent,
+  PackageData,
+  ProjectData,
+} from 'utils/markdownUtils/index.ts';
+import { Package, Project } from 'molecules';
 
 export const handler = async (
   _req: Request,
   ctx: HandlerContext
 ): Promise<Response> => {
-  const sections = [
-    'contributions',
-    'packages',
-    'projects',
-    'skills',
-    'projects/spotify',
-  ].map(async (fileName) => {
-    return [fileName, ...(await getMarkdownDetails([`${fileName}.md`]))];
-  });
-  const body = Object.fromEntries(await Promise.all(sections));
+  const body = await getAllContent();
   return ctx.render({ body });
 };
 
-export default function Home({ data }: PageProps) {
+export default function Home({
+  data: {
+    body: { projects, packages },
+  },
+}: PageProps) {
   return (
     <Fragment>
       <Hero />
-      <Skills content={data.body.skills.body} />
-      <Projects
-        content={data.body.projects.body}
-        projects={
-          Object.entries(data.body).filter(([addr]) =>
-            addr.includes('projects/')
-          ) as [string, ProjectData][]
-        }
+      <Skills content={''} />
+      <ProjectSection
+        content={projects.description}
+        projects={projects.items as ProjectData[]}
+        as={(project: ProjectData) => <Project key={project.id} {...project} />}
+      />
+      <ProjectSection
+        content={packages.description}
+        projects={packages.items as PackageData[]}
+        as={(pkg: PackageData) => <Package key={pkg.id} {...pkg} />}
       />
       <Footer />
     </Fragment>

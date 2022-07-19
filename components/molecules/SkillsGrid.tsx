@@ -2,13 +2,13 @@
 import { h } from 'preact';
 import { tw } from '@twind';
 
-import { getSkills, Skill } from 'data';
+import { getSkills } from 'data';
 import { classNames } from 'utils';
 
 export const SkillsGrid = ({ skills }: SkillsGridProps): h.JSX.Element => {
   return (
     <ul
-      class={tw`mx-auto grid w-full grid-cols-2 items-center justify-center gap-8 px-4 sm:px-6 md:grid-cols-6 lg:px-8`}>
+      class={tw`mx-auto grid w-full grid-cols-2 items-center justify-center gap-8 px-4 sm:px-6 md:grid-cols-6 lg:px-8 cursor-default`}>
       {getSkills(skills).map(({ Icon, name }, i) => (
         <li
           class={classNames(

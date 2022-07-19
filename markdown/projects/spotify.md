@@ -5,8 +5,8 @@ images: /images/spotifywebapp.png
 core: preact, fauna, spotify
 tools: esbuild, netlify, typescript, tailwind
 title: Custom Spotify Webapp
-
 ---
+
 This is my attempt at recreating Spotify but with some (imho improved) UI/UX as well as extend it with additional features.
 
 This project is built on top of a custom scaffold I put together I call a [PETT App](https://www.npmjs.com/package/@ekwoka/create-pett-app).

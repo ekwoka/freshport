@@ -1,19 +1,17 @@
-import { getMarkdown, asyncMap } from 'utils';
+import { asyncMap } from 'utils';
+import { getMarkdown } from './getMarkdown.ts';
 
-const getDetails = (data: string): ProjectDetails => {
+const getDetails = <T extends Record<string, unknown>>(data: string): T => {
   const metadata = data.match(/---(.*\n)*---/);
-  if (!metadata) return nullDetails();
+  if (!metadata) return nullDetails() as T;
   const details = (metadata[0].match(/(.*):(.*)/g) || []).reduce(
-    (obj: ProjectDetails, detail: string) => {
-      const [key, value] = detail.split(/\s*:\s*/) as [
-        keyof ProjectDetails,
-        string
-      ];
+    (obj: T, detail: string): T => {
+      const [key, value] = detail.split(/\s*:\s*/) as [keyof T, string];
       /* @ts-ignore-next-line */
       obj[key] = arrayKeys.includes(key) ? value.split(/\s*,\s*/) : value;
       return obj;
     },
-    nullDetails()
+    {} as T
   );
   return details;
 };
@@ -29,28 +27,47 @@ const getPreview = (data: string): string => {
   return preview.length < 500 ? preview : preview.substring(0, 500);
 };
 
-export const getMarkdownDetails = (files: string[]): Promise<ProjectData[]> => {
-  return asyncMap(files, async (file): Promise<ProjectData> => {
+export const getMarkdownDetails = <T extends AnyData>(
+  ...files: string[]
+): Promise<T[]> => {
+  return asyncMap(files, async (file): Promise<T> => {
     const data = await getMarkdown(file);
     return {
       id: file.substring(file.lastIndexOf('/') + 1),
       path: file,
-      details: getDetails(data),
+      details: file.includes('projects/')
+        ? getDetails<ProjectDetails>(data)
+        : getDetails<PackageDetails>(data),
       preview: getPreview(data),
       body: data.replace(/---(.*\n)*---/, ''),
-    };
+    } as T;
   });
 };
 
-export type ProjectData = {
+export type AnyData = ProjectData | PackageData | SectionData;
+
+export type ProjectData = MarkdownDetails & {
+  details: ProjectDetails;
+};
+
+export type PackageData = MarkdownDetails & {
+  details: PackageDetails;
+};
+
+export type SectionData = MarkdownDetails & {
+  details: {
+    type: string;
+  };
+};
+
+type MarkdownDetails = {
   id: string;
   path: string;
-  details: ProjectDetails;
   preview: string;
   body: string;
 };
 
-type ProjectDetails = {
+export type ProjectDetails = {
   title: string;
   repo: string;
   live: string;
@@ -59,7 +76,13 @@ type ProjectDetails = {
   images: string[];
 };
 
-const nullDetails = (): ProjectDetails => ({
+export type PackageDetails = {
+  name: string;
+  npm: string;
+  repo: string;
+};
+
+const nullDetails = (): Record<string, unknown> => ({
   title: '',
   repo: '',
   live: '',
