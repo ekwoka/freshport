@@ -23,7 +23,7 @@ export const Project = ({ details, body }: ProjectData): h.JSX.Element => {
           </span>
         </h3>
         <img
-          class={tw`w-full rounded-xl shadow`}
+          class={tw`w-full max-w-prose rounded-xl shadow`}
           src={getRespSrc(details.images[0])}
           srcset={getRespSrcSet(details.images[0])}
           alt=""
