@@ -41,7 +41,7 @@ export const allSkills: AllSkills = {
   },
   shopify: {
     Icon: ShopifyIcon,
-    name: 'Shopify',
+    name: 'Shopify Liquid',
     type: 'other',
   },
   spotify: {
