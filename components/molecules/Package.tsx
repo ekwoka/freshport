@@ -23,7 +23,7 @@ export const Package = ({ details, body }: PackageData): h.JSX.Element => {
         <div
           class={tw`mx-auto flex w-full flex-row items-center justify-center gap-4`}>
           <ExtLink href={`https://${details.npm}`}>
-            NPMJS
+            npmjs
             <ExternalLinkIcon class={tw`h-4 w-4`} />
           </ExtLink>
           <ExtLink href={`https://${details.repo}`}>
