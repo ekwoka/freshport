@@ -1,11 +1,16 @@
-import { PackageData, ProjectData } from './getMarkdownDetails.ts';
+import { AnyData, PackageData, ProjectData } from './getMarkdownDetails.ts';
 import { getSectionContent } from './getSectionContent.ts';
 
 export const getAllContent = async () => {
   const projects = getSectionContent<ProjectData>('projects');
   const packages = getSectionContent<PackageData>('packages');
+  const skills = getSectionContent<AnyData>('skills', false);
 
-  return { projects: await projects, packages: await packages };
+  return {
+    projects: await projects,
+    packages: await packages,
+    skills: await skills,
+  };
 };
 
 type Content = {

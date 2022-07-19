@@ -19,13 +19,13 @@ export const handler = async (
 
 export default function Home({
   data: {
-    body: { projects, packages },
+    body: { projects, packages, skills },
   },
 }: PageProps) {
   return (
     <Fragment>
       <Hero />
-      <Skills content={''} />
+      <Skills content={skills.description} />
       <ProjectSection
         content={projects.description}
         projects={projects.items as ProjectData[]}
