@@ -1,6 +1,6 @@
 ---
 name: Create Pett App
-npm: npmjs.com/package/@ekwoka/create-pett-app
+npm: npmjs.com/package/create-pett-app
 repo: github.com/ekwoka/create-pett-app
 ---
 
