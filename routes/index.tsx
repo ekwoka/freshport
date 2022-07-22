@@ -8,7 +8,7 @@ import {
   PackageData,
   ProjectData,
 } from 'utils/markdownUtils/index.ts';
-import { Package, Project } from 'molecules';
+import { Navigation, Package, Project } from 'molecules';
 
 export const handler = async (
   _req: Request,
@@ -25,14 +25,17 @@ export default function Home({
 }: PageProps) {
   return (
     <Fragment>
+      <Navigation />
       <Hero />
       <Skills content={skills.description} />
       <ProjectSection
+        id="projects"
         content={projects.description}
         projects={projects.items as ProjectData[]}
         as={(project: ProjectData) => <Project key={project.id} {...project} />}
       />
       <ProjectSection
+        id="packages"
         content={packages.description}
         projects={packages.items as PackageData[]}
         as={(pkg: PackageData) => <Package key={pkg.id} {...pkg} />}

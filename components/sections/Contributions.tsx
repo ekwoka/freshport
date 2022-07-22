@@ -7,7 +7,7 @@ import { Section } from 'atoms';
 
 export const Contributions = ({ items }: ContributionsProps): h.JSX.Element => {
   return (
-    <Section class="md:px-8 lg:px-12">
+    <Section class="md:px-8 lg:px-12" id="contributions">
       <h2 class="mx-auto max-w-prose">
         <span class="block text-center text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
           Open Source

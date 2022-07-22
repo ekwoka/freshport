@@ -2,20 +2,17 @@
 import { h } from 'preact';
 import { tw } from '@twind';
 
-import { Marked, Section } from 'atoms';
+import { Section } from 'atoms';
 import { AnyData } from 'utils/markdownUtils/index.ts';
 
 export const ProjectSection = <T extends AnyData>({
-  content,
   projects,
   style = 'column',
+  id,
   as,
 }: ProjectSectionProps<T>): h.JSX.Element => {
   return (
-    <Section>
-      {/* <div class={tw`mx-auto flex max-w-screen-sm flex-col gap-4 px-4 py-8`}>
-        <Marked content={content} />
-      </div> */}
+    <Section id={id}>
       <div class={styles[style]()}>{projects.map(as)}</div>
     </Section>
   );
@@ -29,6 +26,7 @@ const styles = {
 
 type ProjectSectionProps<T> = {
   content: string;
+  id: string;
   projects: T[];
   style?: 'column' | 'grid';
   as: (props: T) => h.JSX.Element;
