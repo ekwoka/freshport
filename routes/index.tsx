@@ -1,8 +1,9 @@
 /** @jsx h */
 import { Fragment, h } from 'preact';
 import { HandlerContext, PageProps } from '$fresh/server.ts';
-import { Footer, Hero, Skills, ProjectSection } from 'sections';
+import { Footer, Hero, Skills, ProjectSection, Contributions } from 'sections';
 import {
+  ContributionData,
   getAllContent,
   PackageData,
   ProjectData,
@@ -19,7 +20,7 @@ export const handler = async (
 
 export default function Home({
   data: {
-    body: { projects, packages, skills },
+    body: { projects, packages, skills, contributions },
   },
 }: PageProps) {
   return (
@@ -35,6 +36,10 @@ export default function Home({
         content={packages.description}
         projects={packages.items as PackageData[]}
         as={(pkg: PackageData) => <Package key={pkg.id} {...pkg} />}
+      />
+      <Contributions
+        content={contributions.description}
+        items={contributions.items as ContributionData[]}
       />
       <Footer />
     </Fragment>

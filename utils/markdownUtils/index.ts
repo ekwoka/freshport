@@ -6,7 +6,9 @@ export type {
   AnyData,
   ProjectData,
   PackageData,
+  ContributionData,
   SectionData,
   ProjectDetails,
   PackageDetails,
+  ContributionDetails,
 } from './getMarkdownDetails.ts';

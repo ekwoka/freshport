@@ -44,7 +44,11 @@ export const getMarkdownDetails = <T extends AnyData>(
   });
 };
 
-export type AnyData = ProjectData | PackageData | SectionData;
+export type AnyData =
+  | ProjectData
+  | PackageData
+  | SectionData
+  | ContributionData;
 
 export type ProjectData = MarkdownDetails & {
   details: ProjectDetails;
@@ -52,6 +56,10 @@ export type ProjectData = MarkdownDetails & {
 
 export type PackageData = MarkdownDetails & {
   details: PackageDetails;
+};
+
+export type ContributionData = MarkdownDetails & {
+  details: ContributionDetails;
 };
 
 export type SectionData = MarkdownDetails & {
@@ -80,6 +88,12 @@ export type PackageDetails = {
   name: string;
   npm: string;
   repo: string;
+};
+
+export type ContributionDetails = {
+  project: string;
+  title: string;
+  git: string;
 };
 
 const nullDetails = (): Record<string, unknown> => ({

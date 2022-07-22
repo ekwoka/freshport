@@ -12,7 +12,7 @@ export const Project = ({ details, body }: ProjectData): h.JSX.Element => {
   return (
     <div class={tw`relative overflow-hidden`}>
       <div class={tw`relative flex flex-col gap-8 px-4 sm:px-6 lg:px-8`}>
-        <h3 class={tw`mx-auto max-w-prose`}>
+        <h2 class={tw`mx-auto max-w-prose`}>
           <span
             class={tw`block text-center text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400`}>
             Project
@@ -21,7 +21,7 @@ export const Project = ({ details, body }: ProjectData): h.JSX.Element => {
             class={tw`mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl`}>
             {details.title}
           </span>
-        </h3>
+        </h2>
         <img
           class={tw`w-full max-w-prose rounded-xl shadow`}
           src={getRespSrc(details.images[0])}
