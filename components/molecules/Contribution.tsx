@@ -34,14 +34,14 @@ export const Contribution = ({
       </div>
       <div class={tw`mt-8`}>
         <h3 class={tw`mb-4 text-lg font-medium`}>
-          <a href={git} class={tw`capitalize focus:outline-none`}>
+          <a href={`https://${git}`} class={tw`capitalize focus:outline-none`}>
             {title}
           </a>
         </h3>
         <Marked content={body} />
       </div>
       <a
-        href={git}
+        href={`https://${git}`}
         class={tw`absolute top-2 right-2 p-4 text-gray-300 hover:text-gray-400`}
         aria-hidden="true">
         <ExternalLinkIcon class={tw`h-6 w-6`} />
