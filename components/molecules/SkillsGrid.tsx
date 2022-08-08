@@ -8,7 +8,7 @@ import { classNames } from 'utils';
 export const SkillsGrid = ({ skills }: SkillsGridProps): h.JSX.Element => {
   return (
     <ul
-      class={tw`mx-auto grid w-full grid-cols-2 items-center justify-center gap-8 px-4 sm:px-6 md:grid-cols-6 lg:px-8 cursor-default`}>
+      class={tw`mx-auto grid w-full cursor-default grid-cols-2 items-center justify-center gap-8 px-2 md:grid-cols-6 md:px-0`}>
       {getSkills(skills).map(({ Icon, name }, i) => (
         <li
           class={classNames(

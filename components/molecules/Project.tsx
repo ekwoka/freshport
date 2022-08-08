@@ -11,7 +11,8 @@ import { ProjectData } from 'utils/markdownUtils/index.ts';
 export const Project = ({ details, body }: ProjectData): h.JSX.Element => {
   return (
     <div class={tw`relative overflow-hidden`}>
-      <div class={tw`relative flex flex-col gap-8 px-4 sm:px-6 lg:px-8`}>
+      <div
+        class={tw`relative flex flex-col items-center gap-8 px-4 sm:px-6 lg:px-8`}>
         <h2 class={tw`mx-auto max-w-prose`}>
           <span
             class={tw`block text-center text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400`}>
