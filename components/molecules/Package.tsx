@@ -5,6 +5,7 @@ import { tw } from '@twind';
 import { ExtLink, Marked } from 'atoms';
 import { ExternalLinkIcon, FolderOpenIcon } from 'heroicons';
 import { PackageData } from 'utils/markdownUtils/index.ts';
+import { Badges } from '../atoms/Badges.tsx';
 
 export const Package = ({ details, body }: PackageData): h.JSX.Element => {
   return (
@@ -22,7 +23,7 @@ export const Package = ({ details, body }: PackageData): h.JSX.Element => {
         </h3>
         <div
           class={tw`mx-auto flex w-full flex-row items-center justify-center gap-4`}>
-          <ExtLink href={`https://${details.npm}`}>
+          <ExtLink href={`https://npmjs.org/package/${details.npm_name}`}>
             npmjs
             <ExternalLinkIcon class={tw`h-4 w-4`} />
           </ExtLink>
@@ -32,6 +33,9 @@ export const Package = ({ details, body }: PackageData): h.JSX.Element => {
           </ExtLink>
         </div>
         <Marked content={body} />
+        {details.badges && (
+          <Badges package={details.npm_name} badges={details.badges} />
+        )}
       </div>
     </div>
   );

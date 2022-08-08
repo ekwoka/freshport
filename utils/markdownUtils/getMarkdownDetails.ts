@@ -1,4 +1,5 @@
 import { asyncMap } from 'utils';
+import { BADGES } from '../../components/atoms/Badges.tsx';
 import { getMarkdown } from './getMarkdown.ts';
 
 const getDetails = <T extends Record<string, unknown>>(data: string): T => {
@@ -16,7 +17,7 @@ const getDetails = <T extends Record<string, unknown>>(data: string): T => {
   return details;
 };
 
-const arrayKeys: string[] = ['images', 'core', 'tools'];
+const arrayKeys: string[] = ['images', 'core', 'tools', 'badges'];
 
 const getPreview = (data: string): string => {
   const content = data
@@ -86,7 +87,8 @@ export type ProjectDetails = {
 
 export type PackageDetails = {
   name: string;
-  npm: string;
+  npm_name: string;
+  badges: Array<keyof typeof BADGES>;
   repo: string;
 };
 
