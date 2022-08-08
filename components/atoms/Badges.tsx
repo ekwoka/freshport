@@ -10,15 +10,14 @@ export const Badges = ({
   badges: Array<keyof typeof BADGES>;
 }): h.JSX.Element => {
   return (
-    <div
-      class={tw`flex flex-col items-center justify-center gap-4 md:flex-row`}>
+    <div class={tw`flex flex-row flex-wrap items-center justify-center gap-4`}>
       {badges.map((badge) => {
         const [name, url] = BADGES[badge];
         return (
           <img
             src={url.replace('{package}', pkg)}
             alt={name}
-            class={tw`h-8 w-auto`}
+            class={tw`max-h-[2rem]`}
           />
         );
       })}
