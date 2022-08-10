@@ -9,13 +9,14 @@ import { Marked } from 'atoms';
 
 export const Contribution = ({
   title,
+  icon,
   project,
   git,
   body,
   idx,
   length,
 }: ContributionProps): h.JSX.Element => {
-  const { Icon, name: projectName } = allSkills[project];
+  const { Icon, name: iconLabel } = allSkills[icon ?? project];
   return (
     <div
       key={title}
@@ -27,9 +28,10 @@ export const Contribution = ({
         'relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 dark:bg-gray-900'
       )}`}>
       <div>
-        <span class={tw`inline-flex items-center gap-2 rounded-lg p-3`}>
+        <span
+          class={tw`inline-flex items-center gap-2 rounded-lg p-3 capitalize`}>
           <Icon class={tw`h-6 w-6`} aria-hidden="true" />
-          {projectName}
+          {icon ? project ?? iconLabel : iconLabel}
         </span>
       </div>
       <div class={tw`mt-8`}>

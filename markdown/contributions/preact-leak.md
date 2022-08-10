@@ -1,4 +1,5 @@
 ---
+icon: preact
 project: preact
 title: Remove unmounted component warning
 git: github.com/preactjs/preact/pull/3576

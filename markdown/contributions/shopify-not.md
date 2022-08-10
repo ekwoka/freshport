@@ -1,5 +1,6 @@
 ---
-project: shopify
+icon: shopify
+project: Shopify Dawn Theme
 title: Change CSS for browser compatibility
 git: github.com/Shopify/dawn/pull/311
 ---
