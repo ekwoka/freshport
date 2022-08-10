@@ -50,7 +50,7 @@ const navigation = {
 export const Footer = (): h.JSX.Element => {
   return (
     <footer
-      class={tw`bg-gray-200 text-gray-600 dark:bg-gray-800 dark:text-gray-400`}>
+      class={tw`bg-gray-200 pb-16 text-gray-600 dark:bg-gray-800 dark:text-gray-400`}>
       <div
         class={tw`mx-auto flex max-w-7xl flex-col gap-4 overflow-hidden py-12 px-4 sm:px-6 lg:px-8`}>
         <nav class={tw`flex flex-wrap justify-center`} aria-label="Footer">
