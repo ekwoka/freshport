@@ -4,6 +4,7 @@ import {
   AlpineIcon,
   EsBuildIcon,
   FaunaIcon,
+  FireshipIcon,
   NetlifyIcon,
   PreactIcon,
   ShopifyIcon,
@@ -59,6 +60,11 @@ export const allSkills: AllSkills = {
     name: 'TypeScript',
     type: 'other',
   },
+  fireship: {
+    Icon: FireshipIcon,
+    name: 'Fireship.io',
+    type: 'other',
+  }
 };
 
 const fallbackSkill = (name: string): Skill => ({
