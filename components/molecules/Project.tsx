@@ -5,7 +5,7 @@ import { tw } from '@twind';
 import { getRespSrc, getRespSrcSet } from 'utils';
 import { ExtLink, Marked } from 'atoms';
 import { SkillsGrid } from 'molecules';
-import { ExternalLinkIcon, FolderOpenIcon } from 'heroicons';
+import { ArrowTopRightOnSquareMiniSolid, FolderOpenSolid } from '@heroicons';
 import { ProjectData } from 'utils/markdownUtils/index.ts';
 
 export const Project = ({ details, body }: ProjectData): h.JSX.Element => {
@@ -36,11 +36,11 @@ export const Project = ({ details, body }: ProjectData): h.JSX.Element => {
           class={tw`mx-auto flex w-full flex-row items-center justify-center gap-4`}>
           <ExtLink href={`https://${details.live}`}>
             Live Site
-            <ExternalLinkIcon class={tw`h-4 w-4`} />
+            <ArrowTopRightOnSquareMiniSolid class={tw`h-4 w-4`} />
           </ExtLink>
           <ExtLink href={`https://${details.repo}`}>
             View Repo
-            <FolderOpenIcon class={tw`h-4 w-4`} />
+            <FolderOpenSolid class={tw`h-4 w-4`} />
           </ExtLink>
         </div>
         <Marked content={body} />

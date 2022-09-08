@@ -3,7 +3,7 @@ import { h } from 'preact';
 import { tw } from '@twind';
 
 import { ExtLink, Marked } from 'atoms';
-import { ExternalLinkIcon, FolderOpenIcon } from 'heroicons';
+import { ArrowTopRightOnSquareMiniSolid, FolderOpenSolid } from '@heroicons';
 import { PackageData } from 'utils/markdownUtils/index.ts';
 import { Badges } from '../atoms/Badges.tsx';
 
@@ -25,11 +25,11 @@ export const Package = ({ details, body }: PackageData): h.JSX.Element => {
           class={tw`mx-auto flex w-full flex-row items-center justify-center gap-4`}>
           <ExtLink href={`https://npmjs.org/package/${details.npm_name}`}>
             npmjs
-            <ExternalLinkIcon class={tw`h-4 w-4`} />
+            <ArrowTopRightOnSquareMiniSolid class={tw`h-4 w-4`} />
           </ExtLink>
           <ExtLink href={`https://${details.repo}`}>
             View Repo
-            <FolderOpenIcon class={tw`h-4 w-4`} />
+            <FolderOpenSolid class={tw`h-4 w-4`} />
           </ExtLink>
         </div>
         <Marked content={body} />

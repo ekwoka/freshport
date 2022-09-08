@@ -4,7 +4,7 @@ import { tw } from '@twind';
 import { ContributionDetails } from 'utils/markdownUtils/index.ts';
 import { allSkills } from 'data';
 import { classNames } from 'utils';
-import { ExternalLinkIcon } from 'heroicons';
+import { ArrowTopRightOnSquareMiniSolid } from '@heroicons';
 import { Marked } from 'atoms';
 
 export const Contribution = ({
@@ -50,7 +50,7 @@ export const Contribution = ({
         target="_blank"
         class={tw`absolute top-2 right-2 p-4 text-gray-300 hover:text-gray-400`}
         aria-hidden="true">
-        <ExternalLinkIcon class={tw`h-6 w-6`} />
+        <ArrowTopRightOnSquareMiniSolid class={tw`h-6 w-6`} />
       </a>
     </div>
   );

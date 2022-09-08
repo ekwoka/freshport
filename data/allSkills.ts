@@ -12,7 +12,7 @@ import {
   TailwindIcon,
   TypeScriptIcon,
 } from 'icons';
-import { BanIcon } from 'heroicons';
+import { NoSymbolSolid } from '@heroicons';
 
 export const allSkills: AllSkills = {
   alpine: {
@@ -68,7 +68,7 @@ export const allSkills: AllSkills = {
 };
 
 const fallbackSkill = (name: string): Skill => ({
-  Icon: BanIcon,
+  Icon: NoSymbolSolid,
   name,
   type: 'other',
 });

@@ -1,24 +1,25 @@
 {
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.0.1/",
-    "preact": "https://esm.sh/preact@10.8.2",
-    "preact/": "https://esm.sh/preact@10.8.2/",
-    "react": "https://esm.sh/preact@10.8.2/compat",
-    "preact-global-state": "https://esm.sh/@ekwoka/preact-global-state",
-    "preact-render-to-string": "https://esm.sh/preact-render-to-string@5.2.0?deps=preact@10.8.2",
-    "heroicons": "./components/atoms/heroicons/index.ts",
-    "@twind": "./utils/twind.ts",
-    "twind": "https://esm.sh/twind@0.16.17",
-    "twind/": "https://esm.sh/twind@0.16.17/",
-    "sections": "./components/sections/index.ts",
     "icons": "./components/atoms/icons/index.ts",
-    "patterns": "./components/atoms/patterns/index.ts",
     "atoms": "./components/atoms/index.ts",
+    "patterns": "./components/atoms/patterns/index.ts",
     "molecules": "./components/molecules/index.ts",
     "organisms": "./components/organisms/index.ts",
-    "utils": "./utils/index.ts",
-    "utils/": "./utils/",
+    "sections": "./components/sections/index.ts",
+    "data": "./data/index.ts",
     "islands/": "./islands/",
-    "data": "./data/index.ts"
-  }
+    "utils/": "./utils/",
+    "utils": "./utils/index.ts",
+    "@twind": "./utils/twind.ts",
+    "$fresh/": "https://deno.land/x/fresh@1.0.1/",
+    "preact-global-state": "https://esm.sh/@ekwoka/preact-global-state?deps=preact@10.8.2",
+    "preact-render-to-string": "https://esm.sh/preact-render-to-string@5.2.0?deps=preact@10.8.2",
+    "react": "https://esm.sh/preact@10.8.2/compat",
+    "twind": "https://esm.sh/twind@0.16.17",
+    "twind/": "https://esm.sh/twind@0.16.17/",
+    "@heroicons": "https://esm.sh/v94/preact-heroicons@2.0.11-rc.4?deps=preact@10.8.2",
+    "preact": "https://esm.sh/v94/preact@10.8.2",
+    "preact/": "https://esm.sh/v94/preact@10.8.2/"
+  },
+  "scopes": {}
 }
