@@ -1,8 +1,4 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const AlpineIcon = (): h.JSX.Element => {
+export const AlpineIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +6,7 @@ export const AlpineIcon = (): h.JSX.Element => {
       height="134"
       viewBox="0 0 200 134"
       version="1.1"
-      class={tw`h-12 w-12 fill-current`}>
+      class="h-12 w-12 fill-current">
       <title>AlpineJS</title>
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Group-4" transform="translate(0.000000, 12.000000)">

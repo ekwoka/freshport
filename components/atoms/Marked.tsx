@@ -1,9 +1,7 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
+import { tw } from 'twind';
 import Markdown, { MarkdownToJSX } from 'https://esm.sh/markdown-to-jsx@7.1.7';
 
-export const Marked = ({ content }: { content: string }): h.JSX.Element => (
+export const Marked = ({ content }: { content: string }) => (
   <Markdown options={formatMarkdownOptions()}>{content}</Markdown>
 );
 
@@ -31,7 +29,7 @@ type MarkdownStyles = {
 
 const formatMarkdownOptions = (): MarkdownToJSX.Options => ({
   wrapper: ({ children }) => (
-    <div class={tw`mx-auto flex max-w-prose flex-col gap-2`}>{children}</div>
+    <div class="mx-auto flex max-w-prose flex-col gap-2">{children}</div>
   ),
   overrides: stylesToOverrides(markdownStyle, markdownProps),
 });

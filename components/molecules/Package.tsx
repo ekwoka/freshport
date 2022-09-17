@@ -1,35 +1,31 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
 import { ExtLink, Marked } from 'atoms';
 import { ArrowTopRightOnSquareMiniSolid, FolderOpenSolid } from '@heroicons';
 import { PackageData } from 'utils/markdownUtils/index.ts';
 import { Badges } from '../atoms/Badges.tsx';
 
-export const Package = ({ details, body }: PackageData): h.JSX.Element => {
+export const Package = ({ details, body }: PackageData) => {
   return (
-    <div class={tw`relative overflow-hidden`}>
-      <div class={tw`relative flex flex-col gap-8 px-4 sm:px-6 lg:px-8`}>
-        <h3 class={tw`mx-auto max-w-prose`}>
+    <div class="relative overflow-hidden">
+      <div class="relative flex flex-col gap-8 px-4 sm:px-6 lg:px-8">
+        <h3 class="mx-auto max-w-prose">
           <span
-            class={tw`block text-center text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400`}>
+            class="block text-center text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
             Package
           </span>
           <span
-            class={tw`mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl`}>
+            class="mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl">
             {details.name}
           </span>
         </h3>
         <div
-          class={tw`mx-auto flex w-full flex-row items-center justify-center gap-4`}>
+          class="mx-auto flex w-full flex-row items-center justify-center gap-4">
           <ExtLink href={`https://npmjs.org/package/${details.npm_name}`}>
             npmjs
-            <ArrowTopRightOnSquareMiniSolid class={tw`h-4 w-4`} />
+            <ArrowTopRightOnSquareMiniSolid class="h-4 w-4" />
           </ExtLink>
           <ExtLink href={`https://${details.repo}`}>
             View Repo
-            <FolderOpenSolid class={tw`h-4 w-4`} />
+            <FolderOpenSolid class="h-4 w-4" />
           </ExtLink>
         </div>
         <Marked content={body} />

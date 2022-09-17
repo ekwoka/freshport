@@ -1,7 +1,3 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
 /* This example requires Tailwind CSS v2.0+ */
 const navigation = {
   main: [
@@ -47,42 +43,42 @@ const navigation = {
   ],
 };
 
-export const Footer = (): h.JSX.Element => {
+export const Footer = () => {
   return (
     <footer
-      class={tw`bg-gray-200 pb-16 text-gray-600 dark:bg-gray-800 dark:text-gray-400`}>
+      class="bg-gray-200 pb-16 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
       <div
-        class={tw`mx-auto flex max-w-7xl flex-col gap-4 overflow-hidden py-12 px-4 sm:px-6 lg:px-8`}>
-        <nav class={tw`flex flex-wrap justify-center`} aria-label="Footer">
+        class="mx-auto flex max-w-7xl flex-col gap-4 overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+        <nav class="flex flex-wrap justify-center" aria-label="Footer">
           {navigation.main.map((item) => (
-            <div key={item.name} class={tw`px-5 py-2`}>
+            <div key={item.name} class="px-5 py-2">
               <a
                 href={item.href}
-                class={tw`text-base hover:text-gray-900 dark:hover:text-gray-100`}>
+                class="text-base hover:text-gray-900 dark:hover:text-gray-100">
                 {item.name}
               </a>
             </div>
           ))}
         </nav>
         <a
-          class={tw`mx-auto block max-w-max px-5 py-2 hover:text-gray-900 dark:hover:text-gray-100`}
+          class="mx-auto block max-w-max px-5 py-2 hover:text-gray-900 dark:hover:text-gray-100"
           href="mailto:ninjatheory@gmail.com">
           ninjatheory@gmail.com
         </a>
-        <div class={tw`flex justify-center gap-6 py-2`}>
+        <div class="flex justify-center gap-6 py-2">
           {navigation.social.map((item) => (
             <a
               key={item.name}
               target="_blank"
               href={item.href}
-              class={tw`hover:text-gray-900 dark:hover:text-gray-100`}>
-              <span class={tw`sr-only`}>{item.name}</span>
-              <item.icon class={tw`h-6 w-6`} aria-hidden="true" />
+              class="hover:text-gray-900 dark:hover:text-gray-100">
+              <span class="sr-only">{item.name}</span>
+              <item.icon class="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
         </div>
         <p
-          class={tw`mt-8 text-center text-base text-gray-600 text-opacity-60 dark:text-gray-400 dark:text-opacity-60`}>
+          class="mt-8 text-center text-base text-gray-600 text-opacity-60 dark:text-gray-400 dark:text-opacity-60">
           &copy; 2022 Eric Kwoka. All rights reserved.
         </p>
       </div>

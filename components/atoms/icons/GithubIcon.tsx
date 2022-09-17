@@ -1,11 +1,7 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const GithubIcon = (): h.JSX.Element => {
+export const GithubIcon = () => {
   return (
     <svg
-      class={tw`h-6 w-6 fill-current`}
+      class="h-6 w-6 fill-current"
       width="256px"
       height="250px"
       viewBox="0 0 256 250"

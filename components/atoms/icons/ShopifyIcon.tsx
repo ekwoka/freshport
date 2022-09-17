@@ -1,11 +1,7 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const ShopifyIcon = (): h.JSX.Element => {
+export const ShopifyIcon = () => {
   return (
     <svg
-      class={tw`h-12 w-12 fill-current`}
+      class="h-12 w-12 fill-current"
       width="2192"
       height="2500"
       viewBox="0 0 256 292"

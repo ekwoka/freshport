@@ -16,5 +16,9 @@
       "singleQuote": true,
       "proseWrap": "preserve"
     }
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }

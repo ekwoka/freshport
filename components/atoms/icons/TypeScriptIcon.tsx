@@ -1,13 +1,9 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const TypeScriptIcon = (): h.JSX.Element => {
+export const TypeScriptIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 128 128"
-      class={tw`h-12 w-12 fill-current text-[#3178c6]`}
+      class="h-12 w-12 fill-current text-[#3178c6]"
       aria->
       <title>TypeScript</title>
       <g>

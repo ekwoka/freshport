@@ -1,19 +1,18 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-import { classNames } from 'utils';
+import { JSX } from "preact";
+import { tw } from 'twind';
+import { classNames } from "utils/index.ts";
 
 export const Section = ({
   children,
   class: className,
   ...props
-}: Section): h.JSX.Element => {
+}: Section) => {
   return (
     <section
-      class={tw`${classNames(
+      class={classNames(
         className,
         'flex min-h-[50vh] flex-col items-center justify-center gap-12 bg-gray-100 py-16 text-gray-800 dark:bg-gray-900 dark:text-gray-100'
-      )}`}
+      )}
       {...props}>
       {children}
     </section>
@@ -21,6 +20,6 @@ export const Section = ({
 };
 
 type Section = Record<string, unknown> & {
-  children: h.JSX.Element | h.JSX.Element[];
+  children: JSX.Element | JSX.Element[];
   class?: string;
 };

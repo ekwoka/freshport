@@ -1,6 +1,4 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
+import { tw } from 'twind';
 import { ContributionDetails } from 'utils/markdownUtils/index.ts';
 import { allSkills } from 'data';
 import { classNames } from 'utils';
@@ -15,31 +13,31 @@ export const Contribution = ({
   body,
   idx,
   length,
-}: ContributionProps): h.JSX.Element => {
+}: ContributionProps) => {
   const { Icon, name: iconLabel } = allSkills[icon ?? project];
   return (
     <div
       key={title}
-      class={tw`${classNames(
+      class={classNames(
         idx === 0 && 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none',
         idx === 1 && 'sm:rounded-tr-lg',
         idx === length - 2 && 'sm:rounded-bl-lg',
         idx === length - 1 && 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none',
         'relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 dark:bg-gray-900'
-      )}`}>
+      )}>
       <div>
         <span
-          class={tw`inline-flex items-center gap-2 rounded-lg p-3 capitalize`}>
-          <Icon class={tw`h-6 w-6`} aria-hidden="true" />
+          class="inline-flex items-center gap-2 rounded-lg p-3 capitalize">
+          <Icon class="h-6 w-6" aria-hidden="true" />
           {icon ? project ?? iconLabel : iconLabel}
         </span>
       </div>
-      <div class={tw`mt-8`}>
-        <h3 class={tw`mb-4 text-lg font-medium`}>
+      <div class="mt-8">
+        <h3 class="mb-4 text-lg font-medium">
           <a
             href={`https://${git}`}
             target="_blank"
-            class={tw`capitalize focus:outline-none`}>
+            class="capitalize focus:outline-none">
             {title}
           </a>
         </h3>
@@ -48,9 +46,9 @@ export const Contribution = ({
       <a
         href={`https://${git}`}
         target="_blank"
-        class={tw`absolute top-2 right-2 p-4 text-gray-300 hover:text-gray-400`}
+        class="absolute top-2 right-2 p-4 text-gray-300 hover:text-gray-400"
         aria-hidden="true">
-        <ArrowTopRightOnSquareMiniSolid class={tw`h-6 w-6`} />
+        <ArrowTopRightOnSquareMiniSolid class="h-6 w-6" />
       </a>
     </div>
   );

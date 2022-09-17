@@ -1,12 +1,9 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
 import { classNames } from 'utils';
 
-export const PreactIcon = (): h.JSX.Element => {
+export const PreactIcon = () => {
   return (
     <svg
-      class={tw`h-12 w-12 fill-current text-[#673ab8]`}
+      class="h-12 w-12 fill-current text-[#673ab8]"
       viewBox="-256 -256 512 512">
       <title>Preact</title>
       <path
@@ -14,7 +11,7 @@ export const PreactIcon = (): h.JSX.Element => {
         fill="currentColor"
       />
       <ellipse
-        class={tw`text-white`}
+        class="text-white"
         cx="0"
         cy="0"
         rx="75px"
@@ -27,7 +24,7 @@ export const PreactIcon = (): h.JSX.Element => {
         transform="rotate(52)"
       />
       <ellipse
-        class={tw`text-white`}
+        class="text-white"
         cx="0"
         cy="0"
         rx="75px"
@@ -39,7 +36,7 @@ export const PreactIcon = (): h.JSX.Element => {
         stroke="currentColor"
         transform="rotate(-52)"
       />
-      <circle cx="0" cy="0" r="34" fill="currentColor" class={tw`text-white`} />
+      <circle cx="0" cy="0" r="34" fill="currentColor" class="text-white" />
     </svg>
   );
 };

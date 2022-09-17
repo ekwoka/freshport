@@ -1,5 +1,3 @@
-import { h } from 'preact';
-
 import {
   AlpineIcon,
   EsBuildIcon,
@@ -79,7 +77,7 @@ export const getSkills = (skills: string[]): Skill[] => {
 
 export type Skill = {
   // deno-lint-ignore no-explicit-any
-  Icon: (props: any) => h.JSX.Element;
+  Icon: (props: any) => JSX.Element;
   name: string;
   type: 'frontend' | 'backend' | 'other';
 };

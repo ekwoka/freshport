@@ -1,5 +1,3 @@
-/** @jsx h */
-import { Fragment, h } from 'preact';
 import { HandlerContext, PageProps } from '$fresh/server.ts';
 import { Footer, Hero, Skills, ProjectSection, Contributions } from 'sections';
 import {
@@ -24,7 +22,7 @@ export default function Home({
   },
 }: PageProps) {
   return (
-    <Fragment>
+    <>
       <Navigation />
       <Hero />
       <Skills content={skills.description} />
@@ -45,6 +43,6 @@ export default function Home({
         items={contributions.items as ContributionData[]}
       />
       <Footer />
-    </Fragment>
+    </>
   );
 }

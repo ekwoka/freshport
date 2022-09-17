@@ -1,12 +1,10 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
+import { JSX } from "preact/jsx-runtime";
 
-export const NetlifyIcon = (): h.JSX.Element => {
+export const NetlifyIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class={tw`h-12 w-12 fill-current`}
+      class="h-12 w-12 fill-current"
       viewBox="0 0 40 40"
       width="40"
       height="40">

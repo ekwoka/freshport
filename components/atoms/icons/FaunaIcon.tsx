@@ -1,12 +1,8 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const FaunaIcon = (): h.JSX.Element => {
+export const FaunaIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class={tw`h-12 w-12 fill-current`}
+      class="h-12 w-12 fill-current"
       width="136"
       height="36"
       viewBox="0 0 36 36"

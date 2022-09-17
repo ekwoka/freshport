@@ -3,4 +3,3 @@ export { asyncMap } from './asyncMap.ts';
 export { classNames } from './classNames.ts';
 export { iterableToArray } from './iterableToArray.ts';
 export { getRespSrc, getRespSrcSet } from './respimg.ts';
-export { config } from './twind.ts';

@@ -1,10 +1,6 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const FireshipIcon = (): h.JSX.Element => {
+export const FireshipIcon = () => {
   return (
-    <svg id="fireship-logo" class={tw`w-12 h-12`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1025">
+    <svg id="fireship-logo" class="w-12 h-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1025">
       <defs>
         <linearGradient id="logo-linear-gradient" x1="70.38" y1="512.5" x2="953.62" y2="512.5" gradientUnits="userSpaceOnUse">
           <stop offset="0.01" stop-color="#eb844e" />

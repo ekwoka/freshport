@@ -1,11 +1,7 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const TailwindIcon = (): h.JSX.Element => {
+export const TailwindIcon = () => {
   return (
     <svg
-      class={tw`h-12 w-12 fill-current`}
+      class="h-12 w-12 fill-current"
       height="1504"
       width="2500"
       xmlns="http://www.w3.org/2000/svg"

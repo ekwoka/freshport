@@ -1,11 +1,7 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const CSSIcon = (): h.JSX.Element => {
+export const CSSIcon = () => {
   return (
     <svg
-      class={tw`h-12 w-12 fill-current`}
+      class="h-12 w-12 fill-current"
       width="256px"
       height="261px"
       viewBox="0 100 256 261"

@@ -1,13 +1,9 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const SpotifyIcon = (): h.JSX.Element => {
+export const SpotifyIcon = () => {
   return (
     <svg
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
-      class={tw`h-12 w-12 fill-current`}
+      class="h-12 w-12 fill-current"
       viewBox="0 0 2931 2931"
       width="2931"
       height="2931">

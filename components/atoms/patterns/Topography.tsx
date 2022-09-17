@@ -1,14 +1,10 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
-
-export const Topography = (): h.JSX.Element => {
+export const Topography = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="600"
       height="600"
-      class={tw`absolute inset-0 h-full w-full opacity-10`}
+      class="absolute inset-0 h-full w-full opacity-10"
       viewBox="0 0 600 600"
       preserveAspectRatio="none">
       <path

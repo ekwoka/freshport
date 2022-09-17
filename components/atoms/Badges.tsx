@@ -1,6 +1,4 @@
-/** @jsx h */
-import { h } from 'preact';
-import { tw } from '@twind';
+import { JSX } from "preact/jsx-runtime";
 
 export const Badges = ({
   package: pkg,
@@ -8,16 +6,16 @@ export const Badges = ({
 }: {
   package: string;
   badges: Array<keyof typeof BADGES>;
-}): h.JSX.Element => {
+}) => {
   return (
-    <div class={tw`flex flex-row flex-wrap items-center justify-center gap-4`}>
+    <div class="flex flex-row flex-wrap items-center justify-center gap-4">
       {badges.map((badge) => {
         const [name, url] = BADGES[badge];
         return (
           <img
             src={url.replace('{package}', pkg)}
             alt={name}
-            class={tw`max-h-[2rem]`}
+            class="max-h-[2rem]"
           />
         );
       })}
