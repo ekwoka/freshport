@@ -6,7 +6,7 @@ import {
   PackageData,
   ProjectData,
 } from 'utils/markdownUtils/index.ts';
-import { Navigation, Package, Project } from 'molecules';
+import { Package, Project } from 'molecules';
 
 export const handler = async (
   _req: Request,
@@ -23,7 +23,6 @@ export default function Home({
 }: PageProps) {
   return (
     <>
-      <Navigation />
       <Hero />
       <Skills content={skills.description} />
       <ProjectSection

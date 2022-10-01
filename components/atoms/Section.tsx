@@ -11,7 +11,7 @@ export const Section = ({
     <section
       class={classNames(
         className,
-        'flex min-h-[50vh] flex-col items-center justify-center gap-12 bg-gray-100 py-16 text-gray-800 dark:bg-gray-900 dark:text-gray-100'
+        'flex min-h-[50vh] flex-col items-center justify-center gap-12 bg-gray-100 py-16 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
       )}
       {...props}>
       {children}
