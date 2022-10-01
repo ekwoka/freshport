@@ -15,7 +15,7 @@ export const Skills = ({ content }: { content: string }) => {
             Skills
           </span>
         </h2>
-        <Marked content={content} />
+        <Marked content={content[0]} />
         <div
           class="flex w-full flex-row flex-wrap items-center justify-center gap-4">
           <SkillsGrid skills={skills} />

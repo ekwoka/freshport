@@ -34,13 +34,13 @@ export const getMarkdownDetails = <T extends AnyData>(
   return asyncMap(files, async (file): Promise<T> => {
     const data = await getMarkdown(file);
     return {
-      id: file.substring(file.lastIndexOf('/') + 1),
+      id: file.substring(file.lastIndexOf('/') + 1).split('.')[0],
       path: file,
       details: file.includes('projects/')
         ? getDetails<ProjectDetails>(data)
         : getDetails<PackageDetails>(data),
       preview: getPreview(data),
-      body: data.replace(/---(.*\n)*---/, ''),
+      body: data.replace(/---(.*\n)*---/, '').split('-!-break-!-'),
     } as T;
   });
 };
@@ -73,7 +73,7 @@ type MarkdownDetails = {
   id: string;
   path: string;
   preview: string;
-  body: string;
+  body: string[];
 };
 
 export type ProjectDetails = {

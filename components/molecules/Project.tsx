@@ -39,7 +39,7 @@ export const Project = ({ details, body }: ProjectData) => {
             <FolderOpenSolid class="h-4 w-4" />
           </ExtLink>
         </div>
-        <Marked content={body} />
+        <Marked content={body[0]} />
         <SkillsGrid skills={[...details.core, ...details.tools]} />
       </div>
     </div>

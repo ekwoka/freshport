@@ -1,6 +1,5 @@
 import { join } from 'https://deno.land/std@0.147.0/path/mod.ts';
-import { iterableToArray } from 'utils';
-import { randomizeArray } from "../randomizeArray.ts";
+import { iterableToArray, randomizeArray } from "utils/index.ts";
 import {
   AnyData,
   getMarkdownDetails,
@@ -36,6 +35,6 @@ export const getSectionContent = async <T extends AnyData>(
 
 type SectionContent<T> = {
   type: string;
-  description: string;
+  description: string[];
   items: T[];
 };

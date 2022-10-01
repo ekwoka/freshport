@@ -41,7 +41,7 @@ export const Contribution = ({
             {title}
           </a>
         </h3>
-        <Marked content={body} />
+        <Marked content={body[0]} />
       </div>
       <a
         href={`https://${git}`}
@@ -56,6 +56,6 @@ export const Contribution = ({
 
 type ContributionProps = ContributionDetails & {
   idx: number;
-  body: string;
+  body: string[];
   length: number;
 };

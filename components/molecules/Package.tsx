@@ -1,9 +1,9 @@
-import { ExtLink, Marked } from 'atoms';
+import { ExtLink, Marked, SimpleButton } from 'atoms';
 import { ArrowTopRightOnSquareMiniSolid, FolderOpenSolid } from '@heroicons';
 import { PackageData } from 'utils/markdownUtils/index.ts';
 import { Badges } from '../atoms/Badges.tsx';
 
-export const Package = ({ details, body }: PackageData) => {
+export const Package = ({ details, body, id }: PackageData) => {
   return (
     <div class="relative overflow-hidden">
       <div class="relative flex flex-col gap-8 px-4 sm:px-6 lg:px-8">
@@ -19,6 +19,9 @@ export const Package = ({ details, body }: PackageData) => {
         </h3>
         <div
           class="mx-auto flex w-full flex-row items-center justify-center gap-4">
+          <SimpleButton href={`/packages/${id}`}>
+            More Info
+          </SimpleButton>
           <ExtLink href={`https://npmjs.org/package/${details.npm_name}`}>
             npmjs
             <ArrowTopRightOnSquareMiniSolid class="h-4 w-4" />
@@ -28,10 +31,11 @@ export const Package = ({ details, body }: PackageData) => {
             <FolderOpenSolid class="h-4 w-4" />
           </ExtLink>
         </div>
-        <Marked content={body} />
+        <Marked content={body[0]} />
         {details.badges && (
           <Badges package={details.npm_name} badges={details.badges} />
         )}
+        {body[1] && <Marked content={body[1]} />}
       </div>
     </div>
   );

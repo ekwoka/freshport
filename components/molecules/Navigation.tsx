@@ -1,9 +1,10 @@
 const pages = [
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Packages', href: '#packages' },
-  { name: 'Contributions', href: '#contributions' },
+  { name: 'Skills', href: '/#skills' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'Packages', href: '/packages' },
+  { name: 'Contributions', href: '/#contributions' },
 ];
+
 export const Navigation = () => {
   return (
     <nav

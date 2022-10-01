@@ -19,21 +19,3 @@ export const getAllContent = async () => {
     skills: await skills,
   };
 };
-
-type Content = {
-  contributions: SectionBase & {
-    items: Record<string, unknown>[];
-  };
-  packages: SectionBase & {
-    items: PackageData[];
-  };
-  projects: SectionBase & {
-    items: ProjectData[];
-  };
-  skills: SectionBase;
-};
-
-type SectionBase = {
-  header: string;
-  description: string;
-};

@@ -28,18 +28,18 @@ export default function Home({
       <ProjectSection
         id="projects"
         content={projects.description}
-        projects={projects.items as ProjectData[]}
+        projects={projects.items.slice(0,2) as ProjectData[]}
         as={(project: ProjectData) => <Project key={project.id} {...project} />}
       />
       <ProjectSection
         id="packages"
         content={packages.description}
-        projects={packages.items as PackageData[]}
+        projects={packages.items.slice(0,3) as PackageData[]}
         as={(pkg: PackageData) => <Package key={pkg.id} {...pkg} />}
       />
       <Contributions
         content={contributions.description}
-        items={contributions.items as ContributionData[]}
+        items={contributions.items.slice(0,4) as ContributionData[]}
       />
       <Footer />
     </>
