@@ -1,5 +1,5 @@
 import { HandlerContext, PageProps } from '$fresh/server.ts';
-import { Footer, Hero, Skills, ProjectSection, Contributions } from 'sections';
+import { Hero, Skills, ProjectSection, Contributions } from 'sections';
 import {
   ContributionData,
   getAllContent,
@@ -41,7 +41,6 @@ export default function Home({
         content={contributions.description}
         items={contributions.items.slice(0,4) as ContributionData[]}
       />
-      <Footer />
     </>
   );
 }
