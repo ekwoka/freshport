@@ -35,7 +35,6 @@ export const Package = ({ details, body, id }: PackageData) => {
         {details.badges && (
           <Badges package={details.npm_name} badges={details.badges} />
         )}
-        {body[1] && <Marked content={body[1]} />}
       </div>
     </div>
   );

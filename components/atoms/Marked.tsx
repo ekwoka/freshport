@@ -7,7 +7,7 @@ export const Marked = ({ content }: { content: string }) => (
 
 const markdownStyle: MarkdownStyles = {
   h1: 'text-5xl font-semibold tracking-widest opacity-70',
-  h2: 'text-4xl font-medium tracking-wide',
+  h2: 'text-4xl font-medium tracking-wide mt-8 mb-4',
   h3: 'text-3xl tracking-wide',
   h4: 'text-2xl tracking-wide',
   a: 'text-blue-600 dark:text-blue-400 underline',
@@ -15,6 +15,9 @@ const markdownStyle: MarkdownStyles = {
   li: 'list-disc ml-6',
   blockquote:
     'border-l-4 border-blue-600 dark:border-blue-400 pl-4 my-2 py-2 text-gray-600 dark:text-gray-400',
+  pre: 'border-l-4 border-blue-600 dark:border-blue-400 pl-4 my-2 py-2 text-gray-600 dark:text-gray-400 whitespace-pre-wrap',
+  code: 'text-sm',
+  p: 'tracking-wide leading-relaxed text-lg',
 };
 
 const markdownProps: { [key: string]: { [key: string]: string } } = {
