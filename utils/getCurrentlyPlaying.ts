@@ -2,10 +2,15 @@ import {
   refreshToken,
   spotifyApiClient,
   currentlyPlayingTrack,
+  Track,
 } from '@ekwoka/spotify-api';
 
+let currentTrack: Track | null = null;
+
 export const getCurrentlyPlaying = async () => {
+  if (currentTrack) return currentTrack;
   try {
+    console.log('refetching track');
     // deno-lint-ignore no-explicit-any
     (globalThis as any).process = {
       env: {
@@ -18,6 +23,8 @@ export const getCurrentlyPlaying = async () => {
     );
     const client = spotifyApiClient(access_token);
     const { item } = await client(currentlyPlayingTrack());
+    currentTrack = item;
+    setTimeout(() => (currentTrack = null), 1000 * 60 * 3);
     return item;
   } catch {
     return null;
