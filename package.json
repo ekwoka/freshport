@@ -1,7 +1,17 @@
 {
   "type": "module",
-  "dependencies": {
+  "lint-staged": {
+    "*.{js,ts,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,mdx,html,css,scss,less,graphql,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.12"
+    "prettier-plugin-tailwindcss": "^0.1.13"
   }
 }
