@@ -1,5 +1,5 @@
 import { join } from 'https://deno.land/std@0.147.0/path/mod.ts';
-import { iterableToArray, randomizeArray } from "utils/index.ts";
+import { iterableToArray, randomizeArray } from 'utils/index.ts';
 import {
   AnyData,
   getMarkdownDetails,

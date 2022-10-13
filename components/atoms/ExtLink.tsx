@@ -1,10 +1,7 @@
-import { SimpleButton } from "./SimpleButton.tsx";
+import { SimpleButton } from './SimpleButton.tsx';
 
 export const ExtLink = ({ children, ...props }: ButtonProps) => (
-  <SimpleButton
-
-    target="_blank"
-    {...props}>
+  <SimpleButton target="_blank" {...props}>
     {children}
   </SimpleButton>
 );

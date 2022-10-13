@@ -5,4 +5,4 @@ export const randomizeArray = <T extends unknown[]>(arr: T): T => {
     [arrCopy[i], arrCopy[j]] = [arrCopy[j], arrCopy[i]];
   }
   return arrCopy;
-}
+};

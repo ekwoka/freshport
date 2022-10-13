@@ -45,10 +45,8 @@ const navigation = {
 
 export const Footer = () => {
   return (
-    <footer
-      class="bg-gray-200 pb-16 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
-      <div
-        class="mx-auto flex max-w-7xl flex-col gap-4 overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+    <footer class="bg-gray-200 pb-16 text-gray-600 dark:bg-gray-800 dark:text-gray-400">
+      <div class="mx-auto flex max-w-7xl flex-col gap-4 overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
         <nav class="flex flex-wrap justify-center" aria-label="Footer">
           {navigation.main.map((item) => (
             <div key={item.name} class="px-5 py-2">
@@ -77,8 +75,7 @@ export const Footer = () => {
             </a>
           ))}
         </div>
-        <p
-          class="mt-8 text-center text-base text-gray-600 text-opacity-60 dark:text-gray-400 dark:text-opacity-60">
+        <p class="mt-8 text-center text-base text-gray-600 text-opacity-60 dark:text-gray-400 dark:text-opacity-60">
           &copy; 2022 Eric Kwoka. All rights reserved.
         </p>
       </div>

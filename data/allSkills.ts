@@ -62,7 +62,7 @@ export const allSkills: AllSkills = {
     Icon: FireshipIcon,
     name: 'Fireship.io',
     type: 'other',
-  }
+  },
 };
 
 const fallbackSkill = (name: string): Skill => ({

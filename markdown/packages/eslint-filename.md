@@ -8,6 +8,7 @@ badges: version, downloads, size
 A hooks simple ESLint plugin to enforce the name of JS and TS modules matching to the names of their exports.
 
 Rules:
+
 - `match-named-export`: Enforces that the filename matches to a named export.
 - `match-default-export`: Enforces that filenames match the name of the default export.
 

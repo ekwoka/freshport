@@ -1,6 +1,6 @@
-import { JSX } from "preact";
+import { JSX } from 'preact';
 import { tw } from 'twind';
-import { classNames } from "utils/index.ts";
+import { classNames } from 'utils/index.ts';
 
 export const Section = ({
   children,

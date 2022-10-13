@@ -18,8 +18,7 @@ export const ProjectSection = <T extends AnyData>({
 
 const styles = {
   column: 'flex flex-col items-center justify-center gap-12',
-  grid:
-    'flex flex-col items-center justify-center md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-8 px-20',
+  grid: 'flex flex-col items-center justify-center md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-8 px-20',
 };
 
 type ProjectSectionProps<T> = {

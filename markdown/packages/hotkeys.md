@@ -26,7 +26,7 @@ hotkeys({
   'ctrl+c': () => console.log('copying!!!'),
   'ctrl+k': openSearchBar,
   'cmd+p': openCommandPalette,
-  'cmd+ctrl+alt+shift+u': activateSuperUser
+  'cmd+ctrl+alt+shift+u': activateSuperUser,
 });
 ```
 
@@ -37,7 +37,7 @@ The function also returns a function to unregister the hotkeys.
 ```js
 const unregister = hotkeys({
   'ctrl+c': () => console.log('copying!!!'),
-  'ctrl+x': () => unregister()
+  'ctrl+x': () => unregister(),
 });
 ```
 
@@ -48,7 +48,7 @@ const [counter, setCounter] = useState(0);
 useEffect(
   () =>
     hotkeys({
-      'ctrl+y': () => setCounter(counter + 1)
+      'ctrl+y': () => setCounter(counter + 1),
     }),
   [counter]
 );

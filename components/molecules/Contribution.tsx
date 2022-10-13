@@ -26,8 +26,7 @@ export const Contribution = ({
         'relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 dark:bg-gray-900'
       )}>
       <div>
-        <span
-          class="inline-flex items-center gap-2 rounded-lg p-3 capitalize">
+        <span class="inline-flex items-center gap-2 rounded-lg p-3 capitalize">
           <Icon class="h-6 w-6" aria-hidden="true" />
           {icon ? project ?? iconLabel : iconLabel}
         </span>

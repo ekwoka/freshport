@@ -9,13 +9,11 @@ export const Contributions = ({ items }: ContributionsProps) => {
         <span class="block text-center text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
           Open Source
         </span>
-        <span
-          class="mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl">
+        <span class="mt-2 block text-center text-3xl font-extrabold leading-8 tracking-tight sm:text-4xl">
           Contributions
         </span>
       </h2>
-      <div
-        class="mx-auto max-w-screen-md divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-200 shadow dark:divide-gray-800 dark:bg-gray-800 sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
+      <div class="mx-auto max-w-screen-md divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-200 shadow dark:divide-gray-800 dark:bg-gray-800 sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
         {items.map(({ details, body }, index: number) => (
           <Contribution
             key={details.title}
