@@ -30,8 +30,7 @@ export default function Home({
 }: PageProps) {
   return (
     <>
-      <CurrentlyPlaying track={currentlyPlaying} />
-      <Hero />
+      <Hero currentlyPlaying={currentlyPlaying} />
       <Skills content={skills.description} />
       <ProjectSection
         id="projects"

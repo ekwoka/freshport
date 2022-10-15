@@ -1,6 +1,8 @@
+import { Track } from '@ekwoka/spotify-api';
 import { Topography } from 'patterns';
+import { CurrentlyPlaying } from 'atoms';
 
-export const Hero = () => {
+export const Hero = ({ currentlyPlaying }: { currentlyPlaying?: Track }) => {
   return (
     <section
       class="relative flex min-h-screen w-full min-w-full items-center justify-center overflow-hidden px-4 dark:bg-gray-900 dark:text-gray-100"
@@ -14,6 +16,7 @@ export const Hero = () => {
         Engineer and User Experience
         <span class="font-semibold text-transparent"> Professional </span>
       </h1>
+      {currentlyPlaying && <CurrentlyPlaying track={currentlyPlaying} />}
     </section>
   );
 };

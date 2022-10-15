@@ -26,8 +26,7 @@ export const getCurrentlyPlaying = async () => {
       token = access_token;
       setTimeout(() => (token = null), 1000 * 60 * 30);
     }
-    const client = spotifyApiClient(token);
-    const { item } = await client(currentlyPlayingTrack());
+    const { item } = await spotifyApiClient(token)(currentlyPlayingTrack());
     currentTrack = item;
     setTimeout(() => (currentTrack = null), 1000 * 60 * 3);
     return item;
