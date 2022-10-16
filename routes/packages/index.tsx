@@ -1,9 +1,9 @@
 import { HandlerContext, PageProps } from '$fresh/server.ts';
-import { Section } from 'atoms';
+import { ScrollIndicator, Section } from 'atoms';
 import { getAllContent, PackageData } from 'utils/markdownUtils/index.ts';
 import { ProjectSection } from 'sections';
 import { Package } from 'molecules';
-import { Topography } from '../../components/atoms/patterns/Topography.tsx';
+import { Topography } from 'atoms/patterns/Topography.tsx';
 
 export const handler = async (
   _req: Request,
@@ -39,13 +39,13 @@ export default function Packages({
             </p>
           </div>
         </div>
+        <ScrollIndicator target="/packages#packages" />
       </Section>
-      <ProjectSection
-        id="packages"
-        content={packages.description}
-        projects={packages.items as PackageData[]}
-        as={(pkg: PackageData) => <Package key={pkg.id} {...pkg} />}
-      />
+      <ProjectSection id="packages" content={packages.description}>
+        {packages.items.map((pkg: PackageData) => (
+          <Package key={pkg.id} {...pkg} />
+        ))}
+      </ProjectSection>
     </>
   );
 }

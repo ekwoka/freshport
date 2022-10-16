@@ -8,7 +8,7 @@ import {
 } from 'utils/markdownUtils/index.ts';
 import { Package, Project } from 'molecules';
 import { getCurrentlyPlaying } from 'utils/getCurrentlyPlaying.ts';
-import { CurrentlyPlaying } from 'atoms';
+import { SimpleButton } from 'atoms';
 
 export const handler = async (
   _req: Request,
@@ -32,18 +32,18 @@ export default function Home({
     <>
       <Hero currentlyPlaying={currentlyPlaying} />
       <Skills content={skills.description} />
-      <ProjectSection
-        id="projects"
-        content={projects.description}
-        projects={projects.items.slice(0, 2) as ProjectData[]}
-        as={(project: ProjectData) => <Project key={project.id} {...project} />}
-      />
-      <ProjectSection
-        id="packages"
-        content={packages.description}
-        projects={packages.items.slice(0, 3) as PackageData[]}
-        as={(pkg: PackageData) => <Package key={pkg.id} {...pkg} />}
-      />
+      <ProjectSection id="projects" content={projects.description}>
+        {(projects.items.slice(0, 2) as ProjectData[]).map((project) => (
+          <Project key={project.id} {...project} />
+        ))}
+        <SimpleButton href="/projects">View all projects</SimpleButton>
+      </ProjectSection>
+      <ProjectSection id="packages" content={packages.description}>
+        {(packages.items.slice(0, 3) as PackageData[]).map((pkg) => (
+          <Package key={pkg.id} {...pkg} />
+        ))}
+        <SimpleButton href="/packages">View all packages</SimpleButton>
+      </ProjectSection>
       <Contributions
         content={contributions.description}
         items={contributions.items.slice(0, 4) as ContributionData[]}

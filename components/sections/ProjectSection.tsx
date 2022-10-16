@@ -4,14 +4,13 @@ import { Section } from 'atoms';
 import { AnyData } from 'utils/markdownUtils/index.ts';
 
 export const ProjectSection = <T extends AnyData>({
-  projects,
+  children,
   style = 'column',
   id,
-  as,
 }: ProjectSectionProps<T>) => {
   return (
     <Section id={id}>
-      <div class={styles[style]}>{projects.map(as)}</div>
+      <div class={styles[style]}>{children}</div>
     </Section>
   );
 };
@@ -22,9 +21,8 @@ const styles = {
 };
 
 type ProjectSectionProps<T> = {
+  children: JSX.Element | (JSX.Element | JSX.Element[])[];
   content: string;
   id: string;
-  projects: T[];
   style?: 'column' | 'grid';
-  as: (props: T) => JSX.Element;
 };

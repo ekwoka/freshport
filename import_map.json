@@ -2,6 +2,7 @@
   "imports": {
     "icons": "./components/atoms/icons/index.ts",
     "atoms": "./components/atoms/index.ts",
+    "atoms/": "./components/atoms/",
     "patterns": "./components/atoms/patterns/index.ts",
     "molecules": "./components/molecules/index.ts",
     "organisms": "./components/organisms/index.ts",

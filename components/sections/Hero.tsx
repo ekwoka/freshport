@@ -1,6 +1,6 @@
 import { Track } from '@ekwoka/spotify-api';
 import { Topography } from 'patterns';
-import { CurrentlyPlaying } from 'atoms';
+import { CurrentlyPlaying, ScrollIndicator } from 'atoms';
 
 export const Hero = ({ currentlyPlaying }: { currentlyPlaying?: Track }) => {
   return (
@@ -17,6 +17,7 @@ export const Hero = ({ currentlyPlaying }: { currentlyPlaying?: Track }) => {
         <span class="font-semibold text-transparent"> Professional </span>
       </h1>
       {currentlyPlaying && <CurrentlyPlaying track={currentlyPlaying} />}
+      <ScrollIndicator target="/#skills" />
     </section>
   );
 };
