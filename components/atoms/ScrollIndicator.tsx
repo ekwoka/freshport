@@ -9,7 +9,7 @@ export const ScrollIndicator = ({
   return (
     <SimpleButton
       href={target}
-      class="hover absolute bottom-24 z-10 mx-auto h-10 w-10 animate-bounce p-8 opacity-50 transition-all hover:opacity-100 md:bottom-16">
+      class="hover absolute bottom-24 z-10 mx-auto animate-bounce p-8 opacity-50 transition-all hover:opacity-100 md:bottom-16">
       <ChevronDoubleDownSolid class="h-10 w-10" />
     </SimpleButton>
   );
