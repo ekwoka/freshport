@@ -1,6 +1,6 @@
 import { HandlerContext, PageProps } from '$fresh/server.ts';
 import { ScrollIndicator, Section } from 'atoms';
-import { getAllContent, PackageData } from 'utils/markdownUtils/index.ts';
+import { getSectionContent, PackageData } from 'utils/markdownUtils/index.ts';
 import { ProjectSection } from 'sections';
 import { Package } from 'molecules';
 import { Topography } from 'atoms/patterns/Topography.tsx';
@@ -9,15 +9,15 @@ export const handler = async (
   _req: Request,
   ctx: HandlerContext
 ): Promise<Response> => {
-  const body = await getAllContent();
-  return ctx.render({ body });
+  const content = await getSectionContent<PackageData>(
+    'packages',
+    true,
+    Infinity
+  );
+  return ctx.render(content);
 };
 
-export default function Packages({
-  data: {
-    body: { packages },
-  },
-}: PageProps) {
+export default function Packages({ data: packages }: PageProps) {
   return (
     <>
       <Section fullscreen={true}>
