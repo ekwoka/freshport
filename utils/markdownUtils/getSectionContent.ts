@@ -8,7 +8,8 @@ import {
 
 export const getSectionContent = async <T extends AnyData>(
   sectionName: string,
-  isDir = true
+  isDir = true,
+  slice = 2
 ): Promise<SectionContent<T>> => {
   const {
     details: { type },
@@ -20,16 +21,18 @@ export const getSectionContent = async <T extends AnyData>(
       description,
       items: [],
     };
-  const sectionFiles = (
-    await iterableToArray(Deno.readDir(join('.', 'markdown', sectionName)))
-  ).filter(({ isFile }) => isFile);
+  const sectionFiles = randomizeArray(
+    (
+      await iterableToArray(Deno.readDir(join('.', 'markdown', sectionName)))
+    ).filter(({ isFile }) => isFile)
+  ).slice(0, slice);
   const sectionData = await getMarkdownDetails<T>(
     ...sectionFiles.map(({ name: filename }) => join(sectionName, filename))
   );
   return {
     type,
     description,
-    items: randomizeArray(await Promise.all(sectionData)),
+    items: await Promise.all(sectionData),
   };
 };
 

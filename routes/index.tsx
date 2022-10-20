@@ -33,20 +33,20 @@ export default function Home({
       <Hero currentlyPlaying={currentlyPlaying} />
       <Skills content={skills.description} />
       <ProjectSection id="projects" content={projects.description}>
-        {(projects.items.slice(0, 2) as ProjectData[]).map((project) => (
+        {(projects.items as ProjectData[]).map((project) => (
           <Project key={project.id} {...project} />
         ))}
         <SimpleButton href="/projects">View all projects</SimpleButton>
       </ProjectSection>
       <ProjectSection id="packages" content={packages.description}>
-        {(packages.items.slice(0, 3) as PackageData[]).map((pkg) => (
+        {(packages.items as PackageData[]).map((pkg) => (
           <Package key={pkg.id} {...pkg} />
         ))}
         <SimpleButton href="/packages">View all packages</SimpleButton>
       </ProjectSection>
       <Contributions
         content={contributions.description}
-        items={contributions.items.slice(0, 4) as ContributionData[]}
+        items={contributions.items as ContributionData[]}
       />
     </>
   );

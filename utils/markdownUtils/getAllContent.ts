@@ -7,9 +7,13 @@ import {
 import { getSectionContent } from './getSectionContent.ts';
 
 export const getAllContent = async () => {
-  const projects = getSectionContent<ProjectData>('projects');
-  const packages = getSectionContent<PackageData>('packages');
-  const contributions = getSectionContent<ContributionData>('contributions');
+  const projects = getSectionContent<ProjectData>('projects', true, 2);
+  const packages = getSectionContent<PackageData>('packages', true, 3);
+  const contributions = getSectionContent<ContributionData>(
+    'contributions',
+    true,
+    4
+  );
   const skills = getSectionContent<AnyData>('skills', false);
 
   return {
