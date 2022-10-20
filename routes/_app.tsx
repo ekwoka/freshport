@@ -8,7 +8,11 @@ export default function App(props: AppProps) {
     <>
       <Head>
         <title>Eric Kwoka</title>
-        <style>{'html {scroll-behavior: smooth}'}</style>
+        <style>
+          {
+            'html {scroll-behavior: smooth} @font-face {font-family: ml;src: url(/mono.woff);}.font-mono {font-variant-ligatures: common-ligatures;}'
+          }
+        </style>
       </Head>
       <Navigation />
       <props.Component />
