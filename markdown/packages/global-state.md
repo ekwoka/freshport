@@ -20,13 +20,15 @@ If you are not using `signals` and just want a global equivalent to `useState`, 
 ## Installation
 
 ```bash
+/** @bash */
 pnpm add @ekwoka/preact-global-state # for signals
 pnpm add @ekwoka/preact-global-state@1.0.1  # for non-signals projects
 ```
 
 ## Usage
 
-```ts
+```tsx
+/** @tsx */
 const [counter, setCounter] = useGlobalState<number>('my-counter', 0); // (state label: string; initial value?: any)
 
 return (
@@ -45,7 +47,8 @@ return (
 
 And in another
 
-```ts
+```tsx
+/** @tsx */
 const [counter] = useGlobalState<number>('my-counter', 0);
 
 return (

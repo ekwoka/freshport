@@ -21,12 +21,14 @@ This plugin enforces that the filename matches to a named export. This rule igno
 Install with your package manager of choice:
 
 ```bash
+/** @bash */
 pnpm i -D eslint-plugin-filename-export
 ```
 
 Add to your ESLint config:
 
 ```json
+/** @json */
 {
   "plugins": ["eslint-plugin-filename-export"],
   "rules": {

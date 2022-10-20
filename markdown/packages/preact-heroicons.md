@@ -26,6 +26,7 @@ Preview the icons at [heroicons.com](https://heroicons.com/).
 First, install this library with your package manager of choice!
 
 ```zsh
+/** @bash */
 npm add preact-heroicons
 pnpm add preact-heroicons
 yarn add preact-heroicons
@@ -39,6 +40,7 @@ Now you have access to the entire `heroicons` library! They are formatted as [pa
 Mini Icons (Heroicons v2.0) are accessible by appending `MiniSolid` to the name provided on HeroIcons.
 
 ```tsx
+/** @tsx */
 import { ArchiveBoxSolid } from "preact-heroicons";
 import { ArchiveBoxOutline } from "preact-heroicons";
 import { ArchiveBoxMiniSolid } from "preact-heroicons";
@@ -62,7 +64,8 @@ The types used to define the Icons come from `preact/jsx`.
 
 As a convenience, the type of the components is provided by importing `HeroIcon` from the main package.
 
-```js
+```ts
+/** @ts */
 import { HeroIcon } from 'preact-heroicons';
 
 const Icons: HeroIcon[] = [];

@@ -15,13 +15,15 @@ This is a very simple package that allows you to register hotkeys to run functio
 
 ## Installation
 
-```zsh
+```bash
+/** @bash */
 pnpm add @ekwoka/hotkeys
 ```
 
 ## Usage
 
 ```js
+/** @js */
 hotkeys({
   'ctrl+c': () => console.log('copying!!!'),
   'ctrl+k': openSearchBar,
@@ -35,6 +37,7 @@ The string accepts `ctrl`, `alt`, `cmd`, and `shift` as modifiers, or any combin
 The function also returns a function to unregister the hotkeys.
 
 ```js
+/** @js */
 const unregister = hotkeys({
   'ctrl+c': () => console.log('copying!!!'),
   'ctrl+x': () => unregister(),
@@ -44,6 +47,7 @@ const unregister = hotkeys({
 This allows it to be easily used inside `useEffect` for Preact and React to allow easy reactive hotkeys, or cleaning up components registered hotkeys when they are unloaded.
 
 ```js
+/** @js */
 const [counter, setCounter] = useState(0);
 useEffect(
   () =>

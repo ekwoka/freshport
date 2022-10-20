@@ -31,7 +31,8 @@ Born from my own difficulties using other wrapper libraries for Spotify, this li
 
 Simply install with your favourite flavour of Package Manager
 
-```bash
+```
+/** @bash */
 npm add @ekwoka/spotify-api
 pnpm add @ekwoka/spotify-api
 bun install @ekwoka/spotify-api
@@ -43,9 +44,12 @@ yarn add @ekwoka/spotify-api
 To get started, you'll need to import the core client from the package, and initialize it.
 
 ```js
+/** @javascript */
 import { SpotifyApi } from '@ekwoka/spotify-api';
 
-export const client = SpotifyApi('tokenhere'); // client requires an initial token to initialize. Initialize client after recieving token from Spotify.
+export const client = SpotifyApi('tokenhere');
+// client requires an initial token to initialize.
+// Initialize client after recieving token from Spotify.
 ```
 
 This will create the core client structure with which you'll manage and run requests to the Spotify Apis.
@@ -53,6 +57,7 @@ This will create the core client structure with which you'll manage and run requ
 To update the token during ongoing usage simply, import and use the `setToken` composable with your client.
 
 ```js
+/** @javascript */
 import { SpotifyApi, setToken } from '@ekwoka/spotify-api';
 
 const client = SpotifyApi('initial_token'); // original token
