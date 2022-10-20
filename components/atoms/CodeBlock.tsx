@@ -7,7 +7,11 @@ const languageRegexp = /^\/\*\* @(\S+) \*\/\n/;
 export const CodeBlock = ({ children }: { children: string }): JSX.Element => {
   const language = children.match(languageRegexp)?.[1] || 'js';
   return (
-    <Prism language={language ?? 'javascript'} style={oneDark}>
+    <Prism
+      language={language ?? 'javascript'}
+      style={oneDark}
+      lineProps={{ style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' } }}
+      wrapLines={true}>
       {children.replace(languageRegexp, '')}
     </Prism>
   );
