@@ -12,14 +12,10 @@ export const handler = async (
     join('packages', `${ctx.params.id}.md`)
   );
   if (!pkg) return ctx.render();
-  return ctx.render({ pkg: pkg[0] });
+  return ctx.render(pkg[0]);
 };
 
-export default function PackageById({
-  data: { pkg, readme },
-}: {
-  data: { pkg: PackageData; readme: string };
-}) {
+export default function PackageById({ data: pkg }: { data: PackageData }) {
   return (
     <Section fullscreen={true}>
       <div class="z-10 mx-auto mb-16 flex h-full max-w-4xl flex-col justify-center gap-8 py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
