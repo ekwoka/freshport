@@ -1,16 +1,18 @@
 import { HandlerContext } from '$fresh/server.ts';
 import { ArrowTopRightOnSquareMiniSolid, FolderOpenSolid } from '@heroicons';
-import { getAllContent, PackageData } from 'utils/markdownUtils/index.ts';
+import { getMarkdownDetails, PackageData } from 'utils/markdownUtils/index.ts';
 import { Badges, ExtLink, Marked, Section } from 'atoms';
+import { join } from 'https://deno.land/std@0.147.0/path/mod.ts';
 
 export const handler = async (
   _req: Request,
   ctx: HandlerContext
 ): Promise<Response> => {
-  const body = await getAllContent();
-  const pkg = body.packages.items.find((pkg) => pkg.id === ctx.params.id);
+  const pkg = await getMarkdownDetails<PackageData>(
+    join('packages', `${ctx.params.id}.md`)
+  );
   if (!pkg) return ctx.render();
-  return ctx.render({ pkg });
+  return ctx.render({ pkg: pkg[0] });
 };
 
 export default function PackageById({
