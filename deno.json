@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run --unstable --reload -A --watch=static/,routes/ dev.ts",
+    "start": "deno run --unstable -A --watch=static/,routes/ dev.ts",
     "prettier": "deno run --allow-read --allow-write https://denolib.com/denolib/prettier/main.ts",
     "lint": "deno lint ./components ./data ./utils ./routes ./islands",
     "npm:add": "deno run -A https://esm.sh/v94 add",
