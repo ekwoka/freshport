@@ -1,7 +1,7 @@
 ---
 live: dokdabang.netlify.app/
 repo: github.com/ekwoka/dokdabang
-images: /images/dokdabang.png
+images: dokdabang.png
 core: alpine, shopify
 tools: tailwind
 title: Dok-Dabang eCommerce

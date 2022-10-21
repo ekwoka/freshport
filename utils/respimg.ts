@@ -1,5 +1,5 @@
 export const getRespSrc = (imgurl: string, size = 360): string => {
-  return `${imgurl}?nf_resize=fit&w=${size}`;
+  return `/api/images/${imgurl}?width=${size}`;
 };
 
 export const getRespSrcSet = (imgurl: string): string => {
