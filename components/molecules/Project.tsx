@@ -23,7 +23,7 @@ export const Project = ({ details, body }: ProjectData) => {
           alt=""
           width={1}
           height={1}
-          sizes="65ch"
+          sizes="90vw"
         />
         <div class="mx-auto flex w-full flex-row items-center justify-center gap-4">
           <ExtLink href={`https://${details.live}`}>

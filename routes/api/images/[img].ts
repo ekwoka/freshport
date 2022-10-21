@@ -6,6 +6,7 @@ import {
   initializeImageMagick,
   MagickFormat,
 } from 'https://deno.land/x/imagemagick_deno@0.0.14/mod.ts';
+import { exists } from '../../../utils/index.ts';
 
 export const handler = async (
   req: Request,
@@ -14,10 +15,22 @@ export const handler = async (
   const webp = req.headers.get('accept')?.includes('image/webp') ?? false;
   const params = new URLSearchParams(req.url.split('?')[1]);
   const width = Number(params.get('width')) ?? 360;
-  const imageFile = await Deno.readFile(
-    join('.', 'static', 'images', ctx.params.img)
+  const originalPath = join('.', 'static', 'images', ctx.params.img);
+  const transformedPath = join(
+    '.',
+    'static',
+    'images',
+    'transformed',
+    ctx.params.img.replace(
+      /\.[a-z]{3,4}/,
+      `-${width}w.${webp ? 'webp' : 'jpg'}`
+    )
   );
+  if (await exists(transformedPath))
+    return new Response(await Deno.readFile(transformedPath));
+  const imageFile = await Deno.readFile(originalPath);
   const image = await transformImage(imageFile, width, webp);
+  await Deno.writeFile(transformedPath, image);
   return new Response(image);
 };
 
