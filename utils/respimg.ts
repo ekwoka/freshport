@@ -1,5 +1,9 @@
 export const getRespSrc = (imgurl: string, size = 360): string => {
-  return `https://res.cloudinary.com/dmaoqyvwt/image/fetch/f_auto,q_80,w_${size}/https://thekwoka.net/images/${imgurl}`;
+  return `${
+    Deno.env.get('ON_DENO')
+      ? `https://res.cloudinary.com/dmaoqyvwt/image/fetch/f_auto,q_80,w_${size}/https://thekwoka.net`
+      : ''
+  }/images/${imgurl}`;
 };
 
 export const getRespSrcSet = (imgurl: string): string => {

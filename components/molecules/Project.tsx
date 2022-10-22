@@ -1,5 +1,4 @@
-import { getRespSrc, getRespSrcSet } from 'utils';
-import { ExtLink, Marked } from 'atoms';
+import { ExtLink, Marked, Image } from 'atoms';
 import { SkillsGrid } from 'molecules';
 import { ArrowTopRightOnSquareMiniSolid, FolderOpenSolid } from '@heroicons';
 import { ProjectData } from 'utils/markdownUtils/index.ts';
@@ -16,15 +15,7 @@ export const Project = ({ details, body }: ProjectData) => {
             {details.title}
           </span>
         </h2>
-        <img
-          class="w-full max-w-prose rounded-xl shadow"
-          src={getRespSrc(details.images[0])}
-          srcset={getRespSrcSet(details.images[0])}
-          alt=""
-          width={1}
-          height={1}
-          sizes="90vw"
-        />
+        <Image src={details.images[0]} alt={details.title} />
         <div class="mx-auto flex w-full flex-row items-center justify-center gap-4">
           <ExtLink href={`https://${details.live}`}>
             Live Site
