@@ -29,7 +29,7 @@ export const CodeBlock = ({ children }: { children: string }): JSX.Element => {
         },
       }}
       wrapLines={true}
-      class={tw('!font-mono')}>
+      class={tw('!my-8 !font-mono')}>
       {children.replace(languageRegexp, '')}
     </Prism>
   );

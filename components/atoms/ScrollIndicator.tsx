@@ -1,15 +1,21 @@
 import { ChevronDoubleDownSolid } from '@heroicons';
 import { SimpleButton } from 'atoms';
+import { classNames } from '../../utils/classNames.ts';
 
 export const ScrollIndicator = ({
   target,
+  bottomClass,
 }: {
   target: string;
+  bottomClass?: string;
 }): JSX.Element => {
   return (
     <SimpleButton
       href={target}
-      class="hover absolute bottom-24 z-10 mx-auto animate-bounce p-8 opacity-50 transition-all hover:opacity-100 md:bottom-16">
+      class={classNames(
+        'hover absolute z-10 mx-auto animate-bounce p-8 opacity-50 transition-all hover:opacity-100',
+        bottomClass ?? 'bottom-24 md:bottom-16'
+      )}>
       <ChevronDoubleDownSolid class="h-10 w-10" />
     </SimpleButton>
   );

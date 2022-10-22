@@ -1,18 +1,18 @@
 import { asyncMap } from 'utils';
-import { BADGES } from '../../components/atoms/Badges.tsx';
+import { BADGES } from 'atoms/Badges.tsx';
 import { getMarkdown } from './getMarkdown.ts';
 
-const getDetails = <T extends Record<string, unknown>>(data: string): T => {
+const getDetails = (data: string) => {
   const metadata = data.match(/---(.*\n)*---/);
-  if (!metadata) return nullDetails() as T;
+  if (!metadata) return nullDetails();
   const details = (metadata[0].match(/(.*):(.*)/g) || []).reduce(
-    (obj: T, detail: string): T => {
-      const [key, value] = detail.split(/\s*:\s*/) as [keyof T, string];
+    (obj: Record<string, string>, detail: string) => {
+      const [key, value] = detail.split(/\s*:\s*/) as [string, string];
       /* @ts-ignore-next-line */
       obj[key] = arrayKeys.includes(key) ? value.split(/\s*,\s*/) : value;
       return obj;
     },
-    {} as T
+    {}
   );
   return details;
 };
@@ -36,9 +36,7 @@ export const getMarkdownDetails = <T extends AnyData>(
     return {
       id: file.substring(file.lastIndexOf('/') + 1).split('.')[0],
       path: file,
-      details: file.includes('projects/')
-        ? getDetails<ProjectDetails>(data)
-        : getDetails<PackageDetails>(data),
+      details: file.includes('projects/') ? getDetails(data) : getDetails(data),
       preview: getPreview(data),
       body: data.replace(/---(.*\n)*---/, '').split('-!-break-!-'),
     } as T;

@@ -14,7 +14,7 @@ export const Section = ({
     <section
       class={classNames(
         className,
-        'flex flex-col items-center justify-center gap-12 bg-gray-100 py-16 text-gray-800 dark:bg-gray-900 dark:text-gray-200',
+        'relative flex flex-col items-center justify-center gap-12 bg-gray-100 py-16 text-gray-800 dark:bg-gray-900 dark:text-gray-200',
         fullscreen ? 'min-h-screen' : 'min-h-[50vh]'
       )}
       id={id}

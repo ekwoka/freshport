@@ -20,10 +20,10 @@ export const handler = async (
 export default function Packages({ data: packages }: PageProps) {
   return (
     <>
-      <Section fullscreen={true}>
+      <Section fullscreen={false}>
         <Topography />
         <div class="absolute inset-x-0 -inset-y-64 bg-opacity-90 bg-gradient-to-t from-transparent via-gray-50 to-transparent dark:via-gray-900"></div>
-        <div class="z-10 mx-auto mb-16 flex h-full max-w-4xl flex-col justify-center py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="z-10 mx-auto flex h-full max-w-4xl flex-col justify-center py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div class="text-center">
             <h1 class="block text-center text-xl font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
               My NPM Packages
@@ -39,7 +39,7 @@ export default function Packages({ data: packages }: PageProps) {
             </p>
           </div>
         </div>
-        <ScrollIndicator target="/packages#packages" />
+        <ScrollIndicator target="#packages" bottomClass="bottom-4" />
       </Section>
       <ProjectSection id="packages" content={packages.description}>
         {packages.items.map((pkg: PackageData) => (
