@@ -9,6 +9,7 @@ export const Image = ({ src, alt, class: className }: ImageProps) => (
     )}
     src={getRespSrc(src)}
     srcset={getRespSrcSet(src)}
+    loading="lazy"
     alt={alt}
     width={16}
     height={9}
