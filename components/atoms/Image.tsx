@@ -1,5 +1,5 @@
 import { classNames } from '../../utils/classNames.ts';
-import { getRespSrc } from '../../utils/respimg.ts';
+import { getRespSrc, getRespSrcSet } from '../../utils/respimg.ts';
 
 export const Image = ({ src, alt, class: className }: ImageProps) => (
   <img
@@ -8,7 +8,7 @@ export const Image = ({ src, alt, class: className }: ImageProps) => (
       className ?? 'my-4'
     )}
     src={getRespSrc(src)}
-    srcset={getRespSrc(src)}
+    srcset={getRespSrcSet(src)}
     alt={alt}
     width={16}
     height={9}
