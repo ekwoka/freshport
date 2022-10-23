@@ -8,7 +8,7 @@ Most portfolios are simple static sites: everything is the same for everyone acc
 
 This leaves a bit of a gap in how your portfolio itself can demonstrate your abilities. One nice little touch I found I could add to my portfolio was a little "Currently Listening" widget, that, if I'm listening on Spotify, displays the song I'm listening to.
 
-In this article I'll take you threw how I implemented this on my portfolio, to inspire how you could implement a similar widget (or other kind) on yours!
+In this article I'll take you through how I implemented this on my portfolio, to inspire how you could implement a similar widget on yours!
 
 > Note: My portfolio is implemented in Fresh, a fullstack SSR framework built on Preact and Deno. I'll be mainly showing how this widget is implemented in this context, with sample code assuming the same. This should be fairly easily translated to NextJS, React app, Vue, or whatever.
 
@@ -18,24 +18,20 @@ This is honestly the most complicated part of the process. You need register as 
 
 Quite a few steps. They can be pretty straightforward once you know what your goal is, but it can be a bit daunting when first looking.
 
-I'll mainly skim through these details, as Spotify does have their own guides for it.
-
 ### Making Development App
 
 1. The first step is to head over to [Spotify Developer](https://developer.spotify.com/dashboard/) and login with your Spotify account.
 2. Just click the big `Create App` button and give your app a name.
 3. You'll be taken to the App dashboard and here you can get your `Client ID` and `Client Secret` which we will need for later steps. Get those and write them down.
-
 ![View of Spotify Client ID and Secret](now-listening-2.png)
-
 4. An important thing that may not be clear here is that you need to click on the `users and access` button and add your own email as an approved user of the application.
-5. Click on the `Edit settings` button and move down to the `Redirect URIs`. Add an URI like `http://localhost:3000/`. I'll just assume that is added for later steps. This provides security that only certain sites can potentially get access to any returned codes or tokens.
+5. Click on the `Edit settings` button and move down to the `Redirect URIs`. Add an URI like `http://localhost:3000/`. I'll just assume this is the one you chose for later steps. This provides security that only certain sites can potentially get access to any returned codes or tokens.
 
 ### Logging into Development App
 
-Here's where I can really help you along in the process. I've been working on my own Spotify API wrapper package.
+Here's where I can really help you along in the process. I've been working on my own [Spotify API](/packages/spotify-api) wrapper package.
 
-We can use the helper functions I provide here to make logging and getting our `refresh_token` quite simple.
+We can use the helper functions I provide to make logging and getting our `refresh_token` quite simple.
 
 This doesn't need to be done in your project, you can just use a little file and write and run it as we need to.
 
@@ -89,7 +85,7 @@ const { refresh_token } = await tokensFromCode(code, CLIENT_ID, CLIENT_SECRET);
 console.log(refresh_token);
 ```
 
-Run this just as before and our should pop your `refresh_token`.
+Run this just as before and out should pop your `refresh_token`.
 
 You'll want to add this, the `client_id`, and `client_secret` to your environment variables on your actual portfolio project. These will be used to access your currently playing track for display on your site. I do it as follows to the `.env` file:
 
@@ -102,7 +98,7 @@ SPOTIFY_SECRET=...
 
 ## Building Widget
 
-These next steps will differ quite a bit by the various options for actually integrating the widget, but one thing I will be clear about is that you will need to do these steps server side. If you do this on the client side you are giving any visitors information that they should not have!! We'll be using both the `SPOTIFY_SECRET` and an `access_token` that should not be exposed to anyone.
+These next steps will differ quite a bit by the various setups you may use for generating your portfolio, but one thing I will be clear about is that you will need to do these steps server side. If you do this on the client side you are giving any visitors information that they should not have!! We'll be using both the `SPOTIFY_SECRET` and an `access_token` that should not be exposed to anyone.
 
 ### Getting Currently Playing Track
 
@@ -246,7 +242,7 @@ Some tricks of note here:
 />
 ```
 
-Here we are selecting the image with `300` width. Our display is somewhat small, and the we don't want the teeny tiny thumbnail to be used, nor the way too large one. We want one with some room for high density displays. Most of the time, this will just be the image at index `1` but just incase a track doesn't have it, we can default to the largest image (at index `0`).
+Here we are selecting the image with `300` width. Our display is somewhat small, and the we don't want the teeny tiny thumbnail to be used, nor the way too large one. We want one with some room for high density displays. Most of the time, this will just be the image at index `1` but just in case a track doesn't have it, we can default to the largest image (at index `0`).
 
 ```tsx
 /** @tsx */
@@ -261,7 +257,7 @@ Here we are selecting the image with `300` width. Our display is somewhat small,
 </span>
 ```
 
-This uses some styling as well as a `split` to help ensure the display of our track isn't too crazy. Some songs have hyphens to refer to different versions, or parentheticals to add more information like featured artists, and these can make the some displays wonky at best. Additionally, we want to prevent displays for particularly long song/artist strings to be truncated to only 2 lines.
+This uses some styling as well as a `split` to help ensure the display of our track isn't too crazy. Some songs have hyphens to refer to different versions, or parentheticals to add more information like featured artists, and these can make the some displays wonky at best. Additionally, we want the display of particularly long song/artist strings to be truncated to only 2 lines.
 
 ### Caching
 
