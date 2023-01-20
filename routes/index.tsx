@@ -36,7 +36,6 @@ export default function Home({
         {(projects.items as ProjectData[]).map((project) => (
           <Project key={project.id} {...project} />
         ))}
-        <SimpleButton href="/projects">View all projects</SimpleButton>
       </ProjectSection>
       <ProjectSection id="packages" content={packages.description}>
         {(packages.items as PackageData[]).map((pkg) => (
