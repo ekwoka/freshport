@@ -11,7 +11,7 @@
     "islands/": "./islands/",
     "utils/": "./utils/",
     "utils": "./utils/index.ts",
-    "$fresh/": "https://deno.land/x/fresh@1.1.1/",
+    "$fresh/": "https://deno.land/x/fresh@1.1.2/",
     "preact-global-state": "https://esm.sh/@ekwoka/preact-global-state@2.0.0",
     "@ekwoka/spotify-api": "https://esm.sh/@ekwoka/spotify-api@0.14.0",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.1.3",

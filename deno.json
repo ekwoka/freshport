@@ -5,7 +5,8 @@
     "lint": "deno lint ./components ./data ./utils ./routes ./islands",
     "esm:add": "deno run -A https://esm.sh/v103 add",
     "esm:update": "deno run -A https://esm.sh/v103 update",
-    "esm:remove": "deno run -A https://esm.sh/v103 remove"
+    "esm:remove": "deno run -A https://esm.sh/v103 remove",
+    "fresh:update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "importMap": "./import_map.json",
   "fmt": {
