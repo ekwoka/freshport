@@ -4,16 +4,17 @@ import { getSectionContent, PackageData } from 'utils/markdownUtils/index.ts';
 import { ProjectSection } from 'sections';
 import { Package } from 'molecules';
 import { Topography } from 'atoms/patterns/Topography.tsx';
+import { BlogData } from '../../utils/markdownUtils/getMarkdownDetails.ts';
 
 export const handler = async (
   _req: Request,
   ctx: HandlerContext
 ): Promise<Response> => {
-  const content = await getSectionContent<PackageData>('blog', true, Infinity);
+  const content = await getSectionContent<BlogData>('blog', true, Infinity);
   return ctx.render(content);
 };
 
-export default function Packages({ data: packages }: PageProps) {
+export default function Packages({ data: blogs }: PageProps) {
   return (
     <>
       <Section fullscreen={false}>
@@ -34,9 +35,9 @@ export default function Packages({ data: packages }: PageProps) {
         </div>
         <ScrollIndicator target="#blogs" bottomClass="bottom-4" />
       </Section>
-      <ProjectSection id="blogs" content={packages.description}>
-        {packages.items.map((pkg: PackageData) => (
-          <a href={`/blog/${pkg.id}`}>{pkg.details.title}</a>
+      <ProjectSection id="blogs" content={blogs.description}>
+        {blogs.items.map((blog: BlogData) => (
+          <a href={`/blog/${blog.id}`}>{blog.details.title}</a>
         ))}
       </ProjectSection>
     </>

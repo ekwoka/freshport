@@ -17,7 +17,7 @@ const getDetails = (data: string) => {
   return details;
 };
 
-const arrayKeys: string[] = ['images', 'core', 'tools', 'badges'];
+const arrayKeys: string[] = ['images', 'core', 'tools', 'badges', 'tags'];
 
 const getPreview = (data: string): string => {
   const content = data
@@ -47,7 +47,16 @@ export type AnyData =
   | ProjectData
   | PackageData
   | SectionData
-  | ContributionData;
+  | ContributionData
+  | BlogData;
+
+export type BlogData = MarkdownDetails & {
+  details: {
+    title: string;
+    image: string;
+    tags: string[];
+  }
+}
 
 export type ProjectData = MarkdownDetails & {
   details: ProjectDetails;
