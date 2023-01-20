@@ -3,9 +3,9 @@
     "start": "deno run --unstable -A --watch=static/,routes/ dev.ts",
     "prettier": "deno run --allow-read --allow-write https://denolib.com/denolib/prettier/main.ts",
     "lint": "deno lint ./components ./data ./utils ./routes ./islands",
-    "npm:add": "deno run -A https://esm.sh/v94 add",
-    "npm:update": "deno run -A https://esm.sh/v94 update",
-    "npm:remove": "deno run -A https://esm.sh/v94 remove"
+    "esm:add": "deno run -A https://esm.sh/v103 add",
+    "esm:update": "deno run -A https://esm.sh/v103 update",
+    "esm:remove": "deno run -A https://esm.sh/v103 remove"
   },
   "importMap": "./import_map.json",
   "fmt": {
