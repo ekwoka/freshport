@@ -13,6 +13,6 @@ This project is built on top of a custom scaffold I put together I call a [PETT 
 
 At the core is Preact (a lightweight React alternative) coupled with some custom utilities and the Spotify API and Web Playback SDKs to enable a powerful native-like experience.
 
-This is complemented by esBuild for 🔥 BLAZINGLY FAST 🔥 build times. So fast there isn't a need for a special dev server.
+This is complemented by esbuild for 🔥 BLAZINGLY FAST 🔥 build times. So fast there isn't a need for a special dev server.
 
 > Note: This project is still a work in progress and is not accessible by users that have not been manually approved. This is a restriction imposed by Spotify. For access, just message me!

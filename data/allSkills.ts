@@ -20,7 +20,7 @@ export const allSkills: AllSkills = {
   },
   esbuild: {
     Icon: EsBuildIcon,
-    name: 'esBuild',
+    name: 'esbuild',
     type: 'other',
   },
   fauna: {

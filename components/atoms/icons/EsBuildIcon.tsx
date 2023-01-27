@@ -6,7 +6,7 @@ export const EsBuildIcon = () => {
       viewBox="0 0 200 200"
       width="200"
       height="200">
-      <title>esBuild</title>
+      <title>esbuild</title>
       <circle cx="100" cy="100" r="100" fill="#FFCF00" />
       <path
         d="M47.5 52.5L95 100l-47.5 47.5m60-95L155 100l-47.5 47.5"
