@@ -18,7 +18,7 @@ const markdownStyle: MarkdownStyles = {
   blockquote:
     'border-l-4 border-blue-600 dark:border-blue-400 pl-4 my-2 py-2 text-gray-600 dark:text-gray-400',
   pre: 'border-l-4 border-blue-600 dark:border-blue-400 pl-4 my-2 py-2 text-gray-600 dark:text-gray-400 whitespace-pre-wrap',
-  code: 'text-sm font-mono ',
+  code: 'font-mono',
   p: 'tracking-wide leading-relaxed text-lg',
 };
 
