@@ -26,7 +26,7 @@ export const Badges = ({
 export const BADGES = {
   version: [
     'NPM Version',
-    'https://img.shields.io/npm/v/{package}?style=for-the-badge',
+    'https://img.shields.io/npm/v/{package}?label=%20&style=for-the-badge&logo=pnpm&logoColor=white',
   ],
   types: [
     'NPM Type Definitions',
@@ -34,10 +34,10 @@ export const BADGES = {
   ],
   downloads: [
     'NPM Downloads',
-    'https://img.shields.io/npm/dt/{package}?style=for-the-badge',
+    'https://img.shields.io/npm/dt/{package}?style=for-the-badge&logo=npm&logoColor=white',
   ],
   size: [
     'MINZIPPED Size',
-    'https://img.shields.io/bundlephobia/minzip/{package}?style=for-the-badge',
+    'https://img.shields.io/bundlephobia/minzip/{package}?style=for-the-badge&logo=esbuild&logoColor=white',
   ],
 };
