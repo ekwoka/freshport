@@ -4,6 +4,7 @@ import { allSkills } from 'data';
 import { classNames } from 'utils';
 import { ArrowTopRightOnSquareMiniSolid } from '@heroicons';
 import { Marked } from 'atoms';
+import { fallbackSkill } from '../../data/allSkills.tsx';
 
 export const Contribution = ({
   title,
@@ -14,7 +15,8 @@ export const Contribution = ({
   idx,
   length,
 }: ContributionProps) => {
-  const { Icon, name: iconLabel } = allSkills[icon ?? project];
+  const { Icon, name: iconLabel } = allSkills[icon ?? project] ??
+    fallbackSkill(icon ?? project);
   return (
     <div
       key={title}
@@ -23,20 +25,22 @@ export const Contribution = ({
         idx === 1 && 'sm:rounded-tr-lg',
         idx === length - 2 && 'sm:rounded-bl-lg',
         idx === length - 1 && 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none',
-        'relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 dark:bg-gray-900'
-      )}>
+        'relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500 dark:bg-gray-900',
+      )}
+    >
       <div>
-        <span class="inline-flex items-center gap-2 rounded-lg p-3 capitalize">
-          <Icon class="h-6 w-6" aria-hidden="true" />
+        <span class='inline-flex items-center gap-2 rounded-lg p-3 capitalize'>
+          <Icon class='h-6 w-6' aria-hidden='true' />
           {icon ? project ?? iconLabel : iconLabel}
         </span>
       </div>
-      <div class="mt-8">
-        <h3 class="mb-4 text-lg font-medium">
+      <div class='mt-8'>
+        <h3 class='mb-4 text-lg font-medium'>
           <a
             href={`https://${git}`}
-            target="_blank"
-            class="capitalize focus:outline-none">
+            target='_blank'
+            class='capitalize focus:outline-none'
+          >
             {title}
           </a>
         </h3>
@@ -44,10 +48,11 @@ export const Contribution = ({
       </div>
       <a
         href={`https://${git}`}
-        target="_blank"
-        class="absolute top-2 right-2 p-4 text-gray-300 hover:text-gray-400"
-        aria-hidden="true">
-        <ArrowTopRightOnSquareMiniSolid class="h-6 w-6" />
+        target='_blank'
+        class='absolute top-2 right-2 p-4 text-gray-300 hover:text-gray-400'
+        aria-hidden='true'
+      >
+        <ArrowTopRightOnSquareMiniSolid class='h-6 w-6' />
       </a>
     </div>
   );

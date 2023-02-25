@@ -1,7 +1,6 @@
-import { ExtLink, Marked, SimpleButton } from 'atoms';
+import { ExtLink, Marked, SimpleButton, Badges } from 'atoms';
 import { ArrowTopRightOnSquareMiniSolid, FolderOpenSolid } from '@heroicons';
 import { PackageData } from 'utils/markdownUtils/index.ts';
-import { Badges } from '../atoms/Badges.tsx';
 
 export const Package = ({ details, body, id }: PackageData) => {
   return (
