@@ -5,11 +5,15 @@ import {
   FireshipIcon,
   NetlifyIcon,
   PreactIcon,
+  RustIcon,
   ShopifyIcon,
+  SolidIcon,
   SpotifyIcon,
   TailwindIcon,
+  TauriIcon,
   TypeScriptIcon,
   UserbackIcon,
+  ViteIcon,
 } from 'icons';
 import { HeroIcon, NoSymbolSolid } from '@heroicons';
 
@@ -29,6 +33,11 @@ export const allSkills: AllSkills = {
     name: 'FaunaDB',
     type: 'backend',
   },
+  fireship: {
+    Icon: FireshipIcon,
+    name: 'Fireship.io',
+    type: 'other',
+  },
   netlify: {
     Icon: NetlifyIcon,
     name: 'Netlify Functions',
@@ -39,10 +48,20 @@ export const allSkills: AllSkills = {
     name: 'Preact/React',
     type: 'frontend',
   },
+  rust: {
+    Icon: RustIcon,
+    name: 'Rust',
+    type: 'backend',
+  },
   shopify: {
     Icon: ShopifyIcon,
     name: 'Shopify Liquid',
     type: 'other',
+  },
+  solidjs: {
+    Icon: SolidIcon,
+    name: 'Solid.js',
+    type: 'frontend',
   },
   spotify: {
     Icon: SpotifyIcon,
@@ -54,25 +73,30 @@ export const allSkills: AllSkills = {
     name: 'Tailwind CSS',
     type: 'frontend',
   },
+  tauri: {
+    Icon: TauriIcon,
+    name: 'Tauri',
+    type: 'backend',
+  },
   typescript: {
     Icon: TypeScriptIcon,
     name: 'TypeScript',
     type: 'other',
   },
-  fireship: {
-    Icon: FireshipIcon,
-    name: 'Fireship.io',
-    type: 'other',
-  },
   userback: {
     Icon: UserbackIcon,
     name: 'Userback',
+    type: 'frontend',
+  },
+  vite: {
+    Icon: ViteIcon,
+    name: 'Vite',
     type: 'other',
   },
 };
 
 export const fallbackSkill = (name: string): Skill => ({
-  Icon: NoSymbolSolid,
+  Icon: () => <NoSymbolSolid class='h-12 w-12' />,
   name,
   type: 'other',
 });
