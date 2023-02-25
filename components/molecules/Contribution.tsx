@@ -4,6 +4,7 @@ import { allSkills } from 'data';
 import { classNames } from 'utils';
 import { ArrowTopRightOnSquareMiniSolid } from '@heroicons';
 import { Marked } from 'atoms';
+import { fallbackSkill } from '../../data/allSkills.ts';
 
 export const Contribution = ({
   title,
@@ -14,7 +15,8 @@ export const Contribution = ({
   idx,
   length,
 }: ContributionProps) => {
-  const { Icon, name: iconLabel } = allSkills[icon ?? project];
+  const { Icon, name: iconLabel } =
+    allSkills[icon ?? project] ?? fallbackSkill(icon ?? project);
   return (
     <div
       key={title}

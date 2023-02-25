@@ -12,3 +12,4 @@ export { ShopifyIcon } from './ShopifyIcon.tsx';
 export { SpotifyIcon } from './SpotifyIcon.tsx';
 export { TailwindIcon } from './TailwindIcon.tsx';
 export { TypeScriptIcon } from './TypeScriptIcon.tsx';
+export { UserbackIcon } from './UserbackIcon.tsx';

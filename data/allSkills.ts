@@ -9,8 +9,9 @@ import {
   SpotifyIcon,
   TailwindIcon,
   TypeScriptIcon,
+  UserbackIcon,
 } from 'icons';
-import { NoSymbolSolid } from '@heroicons';
+import { HeroIcon, NoSymbolSolid } from '@heroicons';
 
 export const allSkills: AllSkills = {
   alpine: {
@@ -63,9 +64,14 @@ export const allSkills: AllSkills = {
     name: 'Fireship.io',
     type: 'other',
   },
+  userback: {
+    Icon: UserbackIcon,
+    name: 'Userback',
+    type: 'other',
+  },
 };
 
-const fallbackSkill = (name: string): Skill => ({
+export const fallbackSkill = (name: string): Skill => ({
   Icon: NoSymbolSolid,
   name,
   type: 'other',
@@ -77,7 +83,7 @@ export const getSkills = (skills: string[]): Skill[] => {
 
 export type Skill = {
   // deno-lint-ignore no-explicit-any
-  Icon: (props: any) => JSX.Element;
+  Icon: ((props: any) => JSX.Element) | HeroIcon;
   name: string;
   type: 'frontend' | 'backend' | 'other';
 };
