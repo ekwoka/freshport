@@ -1,4 +1,4 @@
-import { ExtLink, Marked, SimpleButton, Badges } from 'atoms';
+import { Badges, ExtLink, Marked, SimpleButton } from 'atoms';
 import { ArrowTopRightOnSquareMiniSolid, FolderOpenSolid } from '@heroicons';
 import { PackageData } from 'utils/markdownUtils/index.ts';
 
@@ -15,7 +15,9 @@ export const Package = ({ details, body, id }: PackageData) => {
           </span>
         </h3>
         <div class="mx-auto flex w-full flex-row items-center justify-center gap-4">
-          <SimpleButton href={`/packages/${id}`}>More Info</SimpleButton>
+          <SimpleButton href={`/packages/${id}`}>
+            More Info <span class="sr-only">about {details.name} package</span>
+          </SimpleButton>
           <ExtLink href={`https://npmjs.org/package/${details.npm_name}`}>
             npmjs
             <ArrowTopRightOnSquareMiniSolid class="h-4 w-4" />

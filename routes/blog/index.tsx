@@ -19,8 +19,8 @@ export default function Packages({ data: blogs }: PageProps) {
     <>
       <Section fullscreen={false}>
         <Topography />
-        <div class="absolute inset-x-0 -inset-y-64 bg-opacity-90 bg-gradient-to-t from-transparent via-gray-50 to-transparent dark:via-gray-900"></div>
-        <div class="z-10 mx-auto flex h-full max-w-4xl flex-col justify-center py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="absolute -inset-y-64 inset-x-0 bg-opacity-90 bg-gradient-to-t from-transparent via-gray-50 to-transparent dark:via-gray-900"></div>
+        <div class="z-10 mx-auto flex h-full max-w-4xl flex-col justify-center px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
           <div class="text-center">
             <h1 class="block text-center text-xl font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
               My Blog

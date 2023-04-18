@@ -13,6 +13,10 @@ export default function App(props: AppProps) {
             'html {scroll-behavior: smooth} @font-face {font-family: ml;src: url(/mono.woff);}.font-mono {font-variant-ligatures: common-ligatures;}'
           }
         </style>
+        <meta
+          name="description"
+          content="Hi, I'm Eric Kwoka. I am a Full-Stack Engineer and User Experience Professional"
+        />
       </Head>
       <Navigation />
       <props.Component />

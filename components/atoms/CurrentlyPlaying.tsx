@@ -2,7 +2,7 @@ import { Track } from '@ekwoka/spotify-api';
 
 export const CurrentlyPlaying = ({ track }: { track: Track }) =>
   track ? (
-    <div class="absolute inset-x-8 top-8 z-10 flex items-center justify-center overflow-hidden rounded-lg bg-gray-50 bg-opacity-70 shadow backdrop-blur-[2px] backdrop-filter dark:bg-gray-800 dark:bg-opacity-70 sm:inset-x-20 md:top-auto md:left-auto md:right-8 md:bottom-12 md:flex">
+    <div class="absolute inset-x-8 top-8 z-10 flex items-center justify-center overflow-hidden rounded-lg bg-gray-50 bg-opacity-70 shadow backdrop-blur-[2px] backdrop-filter dark:bg-gray-800 dark:bg-opacity-70 sm:inset-x-20 md:bottom-12 md:left-auto md:right-8 md:top-auto md:flex">
       <img
         src={
           (

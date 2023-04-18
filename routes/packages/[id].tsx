@@ -18,7 +18,7 @@ export const handler = async (
 export default function PackageById({ data: pkg }: { data: PackageData }) {
   return (
     <Section fullscreen={true}>
-      <div class="z-10 mx-auto mb-16 flex h-full max-w-4xl flex-col justify-center gap-8 py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+      <div class="z-10 mx-auto mb-16 flex h-full max-w-4xl flex-col justify-center gap-8 px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div>
           <p class="block text-center text-xl font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
             Package

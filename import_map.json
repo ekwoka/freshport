@@ -12,7 +12,7 @@
     "utils/": "./utils/",
     "utils": "./utils/index.ts",
     "preact-global-state": "https://esm.sh/*@ekwoka/preact-global-state@2.0.0",
-    "@ekwoka/spotify-api": "https://esm.sh/@ekwoka/spotify-api@0.14.0",
+    "@ekwoka/spotify-api": "https://esm.sh/@ekwoka/spotify-api@0.16.1",
     "@heroicons": "https://esm.sh/*preact-heroicons@2.0.13",
     "react": "https://esm.sh/preact@10.11.3/compat",
     "$fresh/": "https://deno.land/x/fresh@1.1.3/",

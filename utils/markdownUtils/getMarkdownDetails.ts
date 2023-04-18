@@ -55,8 +55,8 @@ export type BlogData = MarkdownDetails & {
     title: string;
     image: string;
     tags: string[];
-  }
-}
+  };
+};
 
 export type ProjectData = MarkdownDetails & {
   details: ProjectDetails;

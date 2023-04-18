@@ -72,7 +72,6 @@ cache.size; // => 1
 .set(key: string, value: T): WeakLRUCache<T>
 ```
 
-
 Rather straightforward, this method sets the value of the key in the cache. If the key already exists, it will be overwritten, and moved to the front of the queue. If this causes the cache to exceed the size limit, the oldest item will be replaced with a `WeakRef` to the value and await cleanup.
 
 ```ts
@@ -84,7 +83,6 @@ cache.set('key', { foo: 'bar' });
 ```js
 .get(key: string): T | undefined
 ```
-
 
 This method returns the value of the key in the cache, if it exists. If the value is a `WeakRef`, it will be dereferenced and returned. If the value is not found, `undefined` will be returned. If they key is found, it will be moved to the front of the queue. If the value was await garbage collection (from being outside the size of the cache queue), it will be strong referenced and moved back to the front of the queue.
 

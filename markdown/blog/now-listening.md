@@ -23,7 +23,7 @@ Quite a few steps. They can be pretty straightforward once you know what your go
 1. The first step is to head over to [Spotify Developer](https://developer.spotify.com/dashboard/) and login with your Spotify account.
 2. Just click the big `Create App` button and give your app a name.
 3. You'll be taken to the App dashboard and here you can get your `Client ID` and `Client Secret` which we will need for later steps. Get those and write them down.
-![View of Spotify Client ID and Secret](now-listening-2.png)
+   ![View of Spotify Client ID and Secret](now-listening-2.png)
 4. An important thing that may not be clear here is that you need to click on the `users and access` button and add your own email as an approved user of the application.
 5. Click on the `Edit settings` button and move down to the `Redirect URIs`. Add an URI like `http://localhost:3000/`. I'll just assume this is the one you chose for later steps. This provides security that only certain sites can potentially get access to any returned codes or tokens.
 
@@ -189,7 +189,7 @@ import { Track } from '@ekwoka/spotify-api';
 
 export const CurrentlyPlaying = ({ track }: { track: Track }) =>
   track ? (
-    <div class="absolute inset-x-8 top-8 z-10 flex items-center justify-center overflow-hidden rounded-lg bg-gray-50 bg-opacity-70 shadow backdrop-blur-[2px] backdrop-filter dark:bg-gray-800 dark:bg-opacity-70 sm:inset-x-20 md:top-auto md:left-auto md:right-8 md:bottom-12 md:flex">
+    <div class="absolute inset-x-8 top-8 z-10 flex items-center justify-center overflow-hidden rounded-lg bg-gray-50 bg-opacity-70 shadow backdrop-blur-[2px] backdrop-filter dark:bg-gray-800 dark:bg-opacity-70 sm:inset-x-20 md:bottom-12 md:left-auto md:right-8 md:top-auto md:flex">
       <img
         src={
           (

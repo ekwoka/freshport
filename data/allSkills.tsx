@@ -96,7 +96,7 @@ export const allSkills: AllSkills = {
 };
 
 export const fallbackSkill = (name: string): Skill => ({
-  Icon: () => <NoSymbolSolid class='h-12 w-12' />,
+  Icon: () => <NoSymbolSolid class="h-12 w-12" />,
   name,
   type: 'other',
 });
